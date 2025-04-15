@@ -31,7 +31,7 @@ android {
         versionName = "0.0.0"
 
         // Custom test runner to set up Hilt dependency graph
-//        testInstrumentationRunner = "com.wei.traveltaoyuanlite.core.testing.TtlTestRunner"
+        testInstrumentationRunner = "com.wei.traveltaoyuanlite.core.testing.TtlTestRunner"
 
         vectorDrawables {
             useSupportLibrary = true
