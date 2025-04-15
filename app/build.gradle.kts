@@ -72,6 +72,8 @@ dependencies {
     implementation(projects.core.designsystem)
     implementation(projects.core.model)
 
+    implementation(projects.feature.home)
+
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
     // Splashscreen
