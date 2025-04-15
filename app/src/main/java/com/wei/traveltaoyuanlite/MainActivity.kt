@@ -11,17 +11,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.wei.traveltaoyuanlite.ui.theme.TravelTaoyuanLiteTheme
+import com.wei.traveltaoyuanlite.core.designsystem.theme.TtlTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            TravelTaoyuanLiteTheme {
+            TtlTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "TravelTaoyuanLite",
                         modifier = Modifier.padding(innerPadding),
                     )
                 }
@@ -41,7 +41,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    TravelTaoyuanLiteTheme {
-        Greeting("Android")
+    TtlTheme {
+        Greeting("TravelTaoyuanLite")
     }
 }

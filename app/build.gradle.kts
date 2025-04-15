@@ -67,6 +67,10 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.common)
+    implementation(projects.core.data)
+    implementation(projects.core.designsystem)
+    implementation(projects.core.model)
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
@@ -85,50 +89,22 @@ dependencies {
     // Timber
     implementation(libs.timber)
 
+    debugImplementation(projects.uiTestHiltManifest)
     // LeakCanary
     debugImplementation(libs.leakcanary)
     debugImplementation(libs.androidx.compose.ui.testManifest)
 
     kspTest(libs.hilt.compiler)
 
+    testImplementation(projects.core.testing)
     testImplementation(libs.accompanist.testharness)
     testImplementation(libs.hilt.android.testing)
 
     testDemoImplementation(libs.robolectric)
     testDemoImplementation(libs.roborazzi)
 
+    androidTestImplementation(projects.core.testing)
     androidTestImplementation(libs.accompanist.testharness)
     androidTestImplementation(libs.androidx.navigation.testing)
     androidTestImplementation(libs.hilt.android.testing)
-
-
-    // ====================== core:designsystem ===========================
-    // Material Design 3
-    api(libs.androidx.compose.material3)
-    api(libs.androidx.compose.material.iconsExtended)
-    // main APIs for the underlying toolkit systems,
-    // such as input and measurement/layout
-    api(libs.androidx.compose.ui.util)
-    api(libs.androidx.compose.foundation)
-    api(libs.androidx.compose.foundation.layout)
-    api(libs.androidx.compose.runtime)
-    // Android Studio Preview support
-    api(libs.androidx.compose.ui.tooling.preview)
-    // Optional - Integration with window
-    api(libs.androidx.window)
-    // Optional - accompanist adaptive
-    api(libs.accompanist.adaptive)
-    // Coil
-    api(libs.coil.kt.compose)
-    api(libs.coil.kt.svg)
-
-    debugApi(libs.androidx.compose.ui.tooling)
-
-    testImplementation(libs.androidx.compose.ui.test)
-    testImplementation(libs.accompanist.testharness)
-    testImplementation(libs.hilt.android.testing)
-    testImplementation(libs.robolectric)
-    testImplementation(libs.roborazzi)
-
-    androidTestImplementation(libs.androidx.compose.ui.test)
 }

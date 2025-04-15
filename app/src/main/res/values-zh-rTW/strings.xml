@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">旅桃Lite</string>
+    <string name="not_connected">⚠️ 您沒有連接到網路</string>
+    <string name="times">時間</string>
+    <string name="setting">設定</string>
+
+    <!-- Test tag -->
+    <string name="tag_ttl_bottom_bar" translatable="false">TtlBottomBar</string>
+    <string name="tag_ttl_nav_rail" translatable="false">TtlNavRail</string>
+    <string name="tag_ttl_nav_drawer" translatable="false">TtlNavDrawer</string>
+
+</resources>
