@@ -1,59 +1,134 @@
+import com.wei.traveltaoyuanlite.TtlBuildType
+
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.traveltaoyuanlite.android.application)
+    alias(libs.plugins.traveltaoyuanlite.android.application.compose)
+    alias(libs.plugins.traveltaoyuanlite.android.application.flavors)
+    alias(libs.plugins.traveltaoyuanlite.android.hilt)
+    alias(libs.plugins.roborazzi)
 }
 
 android {
     namespace = "com.wei.traveltaoyuanlite"
-    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.wei.traveltaoyuanlite"
-        minSdk = 28
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        /**
+         * Version Code: AABCXYZ
+         *
+         * AA: API Level (35)
+         *
+         * BC: Supported screen sizes for this APK.
+         * 12: Small to Normal screens
+         * 34: Large to X-Large screens
+         *
+         * XYZ: App version (050 for 0.5.0)
+         */
+        versionCode = 3514000
+        /**
+         * SemVer major.minor.patch
+         */
+        versionName = "0.0.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        // Custom test runner to set up Hilt dependency graph
+//        testInstrumentationRunner = "com.wei.traveltaoyuanlite.core.testing.TtlTestRunner"
+
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix = TtlBuildType.DEBUG.applicationIdSuffix
+        }
         release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            isMinifyEnabled = true
+            applicationIdSuffix = TtlBuildType.RELEASE.applicationIdSuffix
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+
+            // To publish on the Play store a private signing key is required, but to allow anyone
+            // who clones the code to sign and run the release variant, use the debug signing key.
+            // TODO: Abstract the signing configuration to a separate file to avoid hardcoding this.
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+
+    packaging {
+        resources {
+            excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+        }
     }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
-    buildFeatures {
-        compose = true
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
     }
 }
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.androidx.core.ktx)
+    // Splashscreen
+    implementation(libs.androidx.core.splashscreen)
+    // Write trace events to the system trace buffer.
+    implementation(libs.androidx.tracing.ktx)
+    // LifeCycle
+    implementation(libs.androidx.lifecycle.runtimeCompose)
+    // WindowSizeClass
+    implementation(libs.androidx.compose.material3.windowSizeClass)
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.android)
+    // Timber
+    implementation(libs.timber)
+
+    // LeakCanary
+    debugImplementation(libs.leakcanary)
+    debugImplementation(libs.androidx.compose.ui.testManifest)
+
+    kspTest(libs.hilt.compiler)
+
+    testImplementation(libs.accompanist.testharness)
+    testImplementation(libs.hilt.android.testing)
+
+    testDemoImplementation(libs.robolectric)
+    testDemoImplementation(libs.roborazzi)
+
+    androidTestImplementation(libs.accompanist.testharness)
+    androidTestImplementation(libs.androidx.navigation.testing)
+    androidTestImplementation(libs.hilt.android.testing)
+
+
+    // ====================== core:designsystem ===========================
+    // Material Design 3
+    api(libs.androidx.compose.material3)
+    api(libs.androidx.compose.material.iconsExtended)
+    // main APIs for the underlying toolkit systems,
+    // such as input and measurement/layout
+    api(libs.androidx.compose.ui.util)
+    api(libs.androidx.compose.foundation)
+    api(libs.androidx.compose.foundation.layout)
+    api(libs.androidx.compose.runtime)
+    // Android Studio Preview support
+    api(libs.androidx.compose.ui.tooling.preview)
+    // Optional - Integration with window
+    api(libs.androidx.window)
+    // Optional - accompanist adaptive
+    api(libs.accompanist.adaptive)
+    // Coil
+    api(libs.coil.kt.compose)
+    api(libs.coil.kt.svg)
+
+    debugApi(libs.androidx.compose.ui.tooling)
+
+    testImplementation(libs.androidx.compose.ui.test)
+    testImplementation(libs.accompanist.testharness)
+    testImplementation(libs.hilt.android.testing)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.roborazzi)
+
+    androidTestImplementation(libs.androidx.compose.ui.test)
 }

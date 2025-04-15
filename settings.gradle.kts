@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             content {
@@ -20,4 +21,8 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "TravelTaoyuanLite"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
+
+include(":ui-test-hilt-manifest")
