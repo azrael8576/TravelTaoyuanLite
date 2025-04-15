@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">TravelTaoyuanLite</string>
+    <string name="app_name">旅桃Lite</string>
+    <string name="not_connected">⚠️ You aren’t connected to the internet</string>
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
+
+    <!-- Test tag -->
+    <string name="tag_ttl_bottom_bar" translatable="false">TtlBottomBar</string>
+    <string name="tag_ttl_nav_rail" translatable="false">TtlNavRail</string>
+    <string name="tag_ttl_nav_drawer" translatable="false">TtlNavDrawer</string>
+
 </resources>
