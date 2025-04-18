@@ -11,12 +11,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.wei.traveltaoyuanlite.core.designsystem.component.FunctionalityNotAvailablePopup
 import com.wei.traveltaoyuanlite.core.designsystem.component.ThemePreviews
@@ -54,12 +57,15 @@ import com.wei.traveltaoyuanlite.core.designsystem.theme.TtlTheme
 @Composable
 internal fun HomeRoute(
     navController: NavController,
+    viewModel: HomeViewModel = hiltViewModel(),
 ) {
-    HomeScreen()
+    val uiStates: HomeViewState by viewModel.states.collectAsStateWithLifecycle()
+    HomeScreen(uiStates = uiStates)
 }
 
 @Composable
 internal fun HomeScreen(
+    uiStates: HomeViewState,
     withTopSpacer: Boolean = true,
     withBottomSpacer: Boolean = true,
     isPreview: Boolean = false,
@@ -109,6 +115,9 @@ internal fun HomeScreen(
 fun HomeScreenPreview() {
     TtlTheme {
         HomeScreen(
+            uiStates = HomeViewState(
+                id = "",
+            ),
             isPreview = true,
         )
     }
