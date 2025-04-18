@@ -14,6 +14,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.appcompat)
     androidTestImplementation(projects.core.testing)
 
     // Material Design 3
