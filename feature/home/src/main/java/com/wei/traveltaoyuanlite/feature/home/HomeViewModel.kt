@@ -9,6 +9,8 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
+const val TEST_LANG = "zh-tw"
+
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val eventRepository: EventRepository,
@@ -25,9 +27,8 @@ class HomeViewModel @Inject constructor(
 
     private fun getEventNews() {
         viewModelScope.launch {
-            eventRepository.getEventNews(
-                lang = "zh-tw",
-                page = 1,
+            eventRepository.getPreviewEventNews(
+                lang = TEST_LANG,
             ).collect { result ->
                 Timber.e("getEventNews $result")
             }
@@ -36,9 +37,8 @@ class HomeViewModel @Inject constructor(
 
     private fun getTravelAttractions() {
         viewModelScope.launch {
-            travelRepository.getTravelAttractions(
-                lang = "zh-tw",
-                page = 1,
+            travelRepository.getPreviewTravelAttractions(
+                lang = TEST_LANG,
             ).collect { result ->
                 Timber.e("getTravelAttractions $result")
             }
