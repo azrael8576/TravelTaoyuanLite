@@ -87,8 +87,8 @@ fun TtlNavigationBar(
 ) {
     NavigationBar(
         modifier = modifier,
+        containerColor = Color.Transparent,
         contentColor = TtlNavigationDefaults.navigationContentColor(),
-        tonalElevation = 0.dp,
         content = content,
     )
 }
