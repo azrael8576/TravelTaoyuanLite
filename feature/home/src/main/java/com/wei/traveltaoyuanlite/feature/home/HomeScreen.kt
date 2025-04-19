@@ -1,29 +1,37 @@
 package com.wei.traveltaoyuanlite.feature.home
 
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsBottomHeight
 import androidx.compose.foundation.layout.windowInsetsTopHeight
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.wei.traveltaoyuanlite.core.designsystem.component.FunctionalityNotAvailablePopup
 import com.wei.traveltaoyuanlite.core.designsystem.component.ThemePreviews
+import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
 import com.wei.traveltaoyuanlite.core.designsystem.theme.TtlTheme
+import com.wei.traveltaoyuanlite.feature.home.ui.AttractionsColumn
+import com.wei.traveltaoyuanlite.feature.home.ui.HomeTopBar
+import com.wei.traveltaoyuanlite.feature.home.ui.NewsColumn
 
 /**
  *
@@ -58,9 +66,13 @@ import com.wei.traveltaoyuanlite.core.designsystem.theme.TtlTheme
 internal fun HomeRoute(
     navController: NavController,
     viewModel: HomeViewModel = hiltViewModel(),
+    widthSizeClass: WindowWidthSizeClass,
 ) {
     val uiStates: HomeViewState by viewModel.states.collectAsStateWithLifecycle()
-    HomeScreen(uiStates = uiStates)
+    HomeScreen(
+        uiStates = uiStates,
+        widthSizeClass = widthSizeClass,
+    )
 }
 
 @Composable
@@ -68,6 +80,7 @@ internal fun HomeScreen(
     uiStates: HomeViewState,
     withTopSpacer: Boolean = true,
     withBottomSpacer: Boolean = true,
+    widthSizeClass: WindowWidthSizeClass = WindowWidthSizeClass.Compact,
     isPreview: Boolean = false,
 ) {
     val showPopup = remember { mutableStateOf(false) }
@@ -84,27 +97,72 @@ internal fun HomeScreen(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background,
     ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
+        LazyColumn(
+            modifier = Modifier.fillMaxSize(),
         ) {
             if (withTopSpacer) {
-                Spacer(Modifier.windowInsetsTopHeight(WindowInsets.safeDrawing))
+                item {
+                    Spacer(Modifier.windowInsetsTopHeight(WindowInsets.safeDrawing))
+                }
+            }
+            val horizontalBasePadding = Modifier.padding(horizontal = SPACING_LARGE.dp)
+
+            item {
+                HomeTopBar(
+                    modifier = horizontalBasePadding,
+                    userName = "Gust",
+                    avatarId = R.drawable.feature_home_he_wei,
+                    onAddUserClick = {
+                        // TODO
+                        showPopup.value = true
+                    },
+                    onUserProfileImageClick = {
+                        // TODO
+                        showPopup.value = true
+                    },
+                    onMenuClick = {
+                        // TODO
+                        showPopup.value = true
+                    },
+                )
             }
 
-            Column {
-                Spacer(modifier = Modifier.weight(1f))
-                Text(
-                    text = "Screen not available \uD83D\uDE48",
-                    color = MaterialTheme.colorScheme.error,
-                    style = MaterialTheme.typography.headlineMedium,
-                    modifier = Modifier
-                        .semantics { contentDescription = "" },
-                )
-                Spacer(modifier = Modifier.weight(1f))
+            if (!uiStates.loadingFinish) {
+                item {
+                    Box(
+                        modifier = Modifier
+                            .height(600.dp)
+                            .fillMaxWidth(),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        CircularProgressIndicator()
+                    }
+                }
+            } else {
+                item {
+                    NewsColumn(
+                        modifier = horizontalBasePadding,
+                        newsUiStateList = uiStates.newsUiStateList,
+                    )
+                }
+
+                item {
+                    Spacer(modifier = Modifier.height(SPACING_LARGE.dp))
+                }
+
+                item {
+                    AttractionsColumn(
+                        modifier = horizontalBasePadding,
+                        attractionsList = uiStates.attractionsUiStateList,
+                        widthSizeClass = widthSizeClass,
+                    )
+                }
             }
 
             if (withBottomSpacer) {
-                Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.safeDrawing))
+                item {
+                    Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.safeDrawing))
+                }
             }
         }
     }
@@ -116,7 +174,8 @@ fun HomeScreenPreview() {
     TtlTheme {
         HomeScreen(
             uiStates = HomeViewState(
-                id = "",
+                newsLoadingState = NewsLoadingState.Finish(isSuccess = true),
+                newsUiStateList = emptyList(),
             ),
             isPreview = true,
         )

@@ -1,5 +1,6 @@
 package com.wei.traveltaoyuanlite.feature.home.navigation
 
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
@@ -14,10 +15,12 @@ fun NavController.navigateToHome(navOptions: NavOptions? = null) {
 
 fun NavGraphBuilder.homeGraph(
     navController: NavController,
+    widthSizeClass: WindowWidthSizeClass,
 ) {
     composable(route = HOME_ROUTE) {
         HomeRoute(
             navController = navController,
+            widthSizeClass = widthSizeClass,
         )
     }
 }
