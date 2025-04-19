@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_home_profile_picture">%s\'s profile picture</string>
+    <string name="feature_home_add_user">Add User</string>
+    <string name="feature_home_menu">Menu</string>
+    <string name="feature_home_hello">Hello, %1$s</string>
+    <string name="feature_home_news">News</string>
+    <string name="feature_home_more_news">More</string>
+    <string name="feature_home_attractions">Attractions</string>
+    <string name="feature_home_more_attractions">More</string>
+
+    <!-- Test tag -->
+    <string name="feature_home_tag_user_avatar" translatable="false">UserAvatar</string>
+    <string name="feature_home_tag_hello_user_name_text" translatable="false">HelloUserNameText</string>
+</resources>

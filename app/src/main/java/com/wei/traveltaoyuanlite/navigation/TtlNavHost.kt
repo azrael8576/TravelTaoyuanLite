@@ -27,6 +27,7 @@ fun TtlNavHost(
     val navigationType = appState.navigationType
     val isPortrait = appState.currentDeviceOrientation == DeviceOrientation.PORTRAIT
     val contentType = appState.contentType
+    val windowSizeClass = appState.windowSizeClass
 
     NavHost(
         navController = navController,
@@ -35,6 +36,7 @@ fun TtlNavHost(
     ) {
         homeGraph(
             navController = navController,
+            widthSizeClass = windowSizeClass.widthSizeClass,
         )
     }
 }
