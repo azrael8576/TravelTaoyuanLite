@@ -1,7 +1,5 @@
 package com.wei.traveltaoyuanlite.core.designsystem.theme
 
-import android.content.res.Resources
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
@@ -33,37 +31,15 @@ val gilroyFontFamily = FontFamily(
     Font(R.font.gilroy_ultra_light_italic, FontWeight.ExtraLight, FontStyle.Italic),
 )
 
-val sourceHanSansTC = FontFamily(
-    Font(R.font.source_han_sans_tc_regular, FontWeight.ExtraLight),
-    Font(R.font.source_han_sans_tc_regular, FontWeight.Thin),
-    Font(R.font.source_han_sans_tc_regular, FontWeight.Light),
-    Font(R.font.source_han_sans_tc_regular, FontWeight.Normal),
-    Font(R.font.source_han_sans_tc_medium, FontWeight.Medium),
-    Font(R.font.source_han_sans_tc_medium, FontWeight.SemiBold),
-    Font(R.font.source_han_sans_tc_bold, FontWeight.Bold),
-    Font(R.font.source_han_sans_tc_bold, FontWeight.ExtraBold),
-    Font(R.font.source_han_sans_tc_bold, FontWeight.Black),
-)
-
 // 可選用的特殊標題字體，例如 banner / logo
 val abrilFatfaceFontFamily =
     FontFamily(
         Font(R.font.abril_fatface),
     )
 
-private fun getCurrentLanguageCode(): String {
-    val appLocale = AppCompatDelegate.getApplicationLocales().toLanguageTags()
-    val systemLocale = Resources.getSystem().configuration.locales[0]?.language ?: "en"
-    return appLocale.ifEmpty { systemLocale }
-}
-
 @Composable
 fun getAppTypography(): Typography {
-    val languageCode = getCurrentLanguageCode()
-    val fontFamily = when {
-        languageCode.startsWith("zh") -> sourceHanSansTC
-        else -> gilroyFontFamily
-    }
+    val fontFamily = gilroyFontFamily
 
     return Typography(
         displayLarge = TextStyle(
