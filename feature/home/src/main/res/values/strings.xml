@@ -5,9 +5,14 @@
     <string name="feature_home_menu">Menu</string>
     <string name="feature_home_hello">Hello, %1$s</string>
     <string name="feature_home_news">News</string>
-    <string name="feature_home_more_news">More</string>
+    <string name="feature_home_view_all_news">More</string>
     <string name="feature_home_attractions">Attractions</string>
-    <string name="feature_home_more_attractions">More</string>
+    <string name="feature_home_view_all_attractions">More</string>
+    <string name="feature_home_news_subtitle">Latest Tourism News from Taoyuan City</string>
+    <string name="feature_home_back">Back</string>
+    <string name="feature_home_no_data_found">No Data Found</string>
+    <string name="feature_home_retry">Retry</string>
+    <string name="feature_home_an_error_occurred_please_try_again_later">An error occurred, please try again later</string>
 
     <!-- Test tag -->
     <string name="feature_home_tag_user_avatar" translatable="false">UserAvatar</string>

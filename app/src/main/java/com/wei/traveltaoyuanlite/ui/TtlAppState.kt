@@ -27,6 +27,7 @@ import com.wei.traveltaoyuanlite.core.designsystem.ui.isBookPosture
 import com.wei.traveltaoyuanlite.core.designsystem.ui.isSeparating
 import com.wei.traveltaoyuanlite.feature.home.navigation.HOME_ROUTE
 import com.wei.traveltaoyuanlite.feature.home.navigation.navigateToHome
+import com.wei.traveltaoyuanlite.feature.news.navigation.NEWS_ROUTE
 import com.wei.traveltaoyuanlite.feature.webview.navigation.WEB_VIEW_ROUTE
 import com.wei.traveltaoyuanlite.navigation.TopLevelDestination
 import kotlinx.coroutines.CoroutineScope
@@ -145,6 +146,7 @@ class TtlAppState(
         @Composable get() = when (currentDestination?.route) {
             null -> true
             WEB_VIEW_ROUTE -> true
+            NEWS_ROUTE -> true
             else -> false
         }
 
@@ -168,7 +170,7 @@ class TtlAppState(
      * Map of top level destinations to be used in the TopBar, BottomBar and NavRail. The key is the
      * route.
      */
-    val topLevelDestinations: List<TopLevelDestination> = TopLevelDestination.values().asList()
+    val topLevelDestinations: List<TopLevelDestination> = TopLevelDestination.entries
 
     /**
      * UI logic for navigating to a top level destination in the app. Top level destinations have

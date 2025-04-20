@@ -1,4 +1,4 @@
-package com.wei.traveltaoyuanlite.feature.home.ui
+package com.wei.traveltaoyuanlite.feature.news.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -28,8 +28,8 @@ import com.wei.traveltaoyuanlite.core.designsystem.component.ThemePreviews
 import com.wei.traveltaoyuanlite.core.designsystem.component.coilImagePainter
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
 import com.wei.traveltaoyuanlite.core.designsystem.theme.TtlTheme
-import com.wei.traveltaoyuanlite.feature.home.NewsUiState
 import com.wei.traveltaoyuanlite.feature.home.R
+import com.wei.traveltaoyuanlite.feature.news.NewsUiState
 
 @Composable
 fun NewsCard(

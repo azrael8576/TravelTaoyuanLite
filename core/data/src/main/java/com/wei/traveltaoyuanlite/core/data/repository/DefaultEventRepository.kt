@@ -47,7 +47,7 @@ constructor(
             }
         }
 
-    override suspend fun getPagingEventNews(lang: String): Flow<PagingData<EventNews>> =
+    override fun getPagingEventNews(lang: String): Flow<PagingData<EventNews>> =
         Pager(
             config = PagingConfig(
                 pageSize = 10,
