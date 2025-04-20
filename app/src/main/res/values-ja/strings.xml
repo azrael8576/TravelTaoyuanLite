@@ -3,5 +3,6 @@
     <string name="app_name">Travel Taoyuan Lite</string>
     <string name="not_connected">⚠️ インターネットに接続されていません</string>
     <string name="home">ホーム</string>
+    <string name="attraction">観光スポット</string>
     <string name="setting">設定</string>
 </resources>

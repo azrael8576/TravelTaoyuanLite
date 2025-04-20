@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_attractions_no_data_found">No Data Found</string>
+    <string name="feature_attractions_retry">Retry</string>
+    <string name="feature_attractions_an_error_occurred_please_try_again_later">An error occurred, please try again later</string>
+    <string name="feature_attractions_back">Back</string>
+    <string name="feature_attractions_bookmark">bookmark</string>
+    <string name="feature_attractions_filter">filter</string>
+    <string name="feature_attractions_select_destination">Select destination</string>
+</resources>

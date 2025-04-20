@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_attractions_no_data_found">找不到資料</string>
+    <string name="feature_attractions_retry">重試</string>
+    <string name="feature_attractions_an_error_occurred_please_try_again_later">發生錯誤，請稍後再試</string>
+    <string name="feature_attractions_back">返回</string>
+    <string name="feature_attractions_bookmark">書籤</string>
+    <string name="feature_attractions_filter">篩選</string>
+    <string name="feature_attractions_select_destination">選擇目的地</string>
+</resources>

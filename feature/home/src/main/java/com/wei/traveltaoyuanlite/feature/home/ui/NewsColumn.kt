@@ -37,10 +37,10 @@ fun NewsColumn(
     modifier: Modifier = Modifier,
     newsUiStateList: List<NewsUiState>,
     navigateToWebView: (String, String) -> Unit,
-    navigateToNews: () -> Unit,
+    onViewAllClick: () -> Unit,
 ) {
     Column(modifier = modifier.padding(top = SPACING_LARGE.dp)) {
-        NewsColumnTitle(onMoreClick = navigateToNews)
+        NewsColumnTitle(onViewAllClick = onViewAllClick)
         Spacer(modifier = Modifier.height(SPACING_SMALL.dp))
         newsUiStateList.forEach { news ->
             NewsCard(
@@ -53,7 +53,7 @@ fun NewsColumn(
 }
 
 @Composable
-private fun NewsColumnTitle(onMoreClick: () -> Unit) {
+private fun NewsColumnTitle(onViewAllClick: () -> Unit) {
     Row(verticalAlignment = Alignment.Bottom) {
         val news = stringResource(R.string.feature_home_news)
         Text(
@@ -66,7 +66,7 @@ private fun NewsColumnTitle(onMoreClick: () -> Unit) {
                 .semantics { contentDescription = news },
         )
         Spacer(modifier = Modifier.weight(1f))
-        ViewAllButton(onClick = onMoreClick)
+        ViewAllButton(onClick = onViewAllClick)
     }
 }
 
@@ -113,7 +113,7 @@ fun NewsColumPreview() {
                 modifier = Modifier.padding(horizontal = SPACING_LARGE.dp),
                 newsUiStateList = emptyList(),
                 navigateToWebView = { _, _ -> },
-                navigateToNews = {},
+                onViewAllClick = {},
             )
         }
     }

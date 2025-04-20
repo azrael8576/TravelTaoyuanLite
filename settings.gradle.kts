@@ -42,5 +42,6 @@ include(":core:testing")
 
 include(":feature:home")
 include(":feature:webview")
+include(":feature:attractions")
 
 include(":ui-test-hilt-manifest")

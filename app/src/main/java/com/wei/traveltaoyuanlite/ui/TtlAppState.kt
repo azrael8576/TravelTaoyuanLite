@@ -17,6 +17,8 @@ import androidx.navigation.navOptions
 import androidx.tracing.trace
 import androidx.window.layout.DisplayFeature
 import androidx.window.layout.FoldingFeature
+import com.wei.traveltaoyanlite.feature.attractions.navigation.ATTRACTIONS_ROUTE
+import com.wei.traveltaoyanlite.feature.attractions.navigation.navigateToAttractions
 import com.wei.traveltaoyuanlite.core.data.utils.NetworkMonitor
 import com.wei.traveltaoyuanlite.core.designsystem.ui.DeviceOrientation
 import com.wei.traveltaoyuanlite.core.designsystem.ui.DevicePosture
@@ -153,6 +155,7 @@ class TtlAppState(
     val currentTopLevelDestination: TopLevelDestination?
         @Composable get() = when (currentDestination?.route) {
             HOME_ROUTE -> TopLevelDestination.HOME
+            ATTRACTIONS_ROUTE -> TopLevelDestination.ATTRACTION
             else -> null
         }
 
@@ -197,6 +200,10 @@ class TtlAppState(
 
             when (topLevelDestination) {
                 TopLevelDestination.HOME -> navController.navigateToHome(
+                    topLevelNavOptions,
+                )
+
+                TopLevelDestination.ATTRACTION -> navController.navigateToAttractions(
                     topLevelNavOptions,
                 )
 
