@@ -11,6 +11,7 @@ android {
 dependencies {
     implementation(projects.core.data)
 
+    implementation(libs.androidx.appcompat)
     // WindowSizeClass
     implementation(libs.androidx.compose.material3.windowSizeClass)
 

@@ -147,7 +147,7 @@ private fun MenuButton(onMenuClick: () -> Unit) {
             .semantics { contentDescription = menu },
     ) {
         Icon(
-            imageVector = TtlIcons.Menu,
+            imageVector = TtlIcons.Language,
             contentDescription = null,
             tint = MaterialTheme.colorScheme.outline,
         )

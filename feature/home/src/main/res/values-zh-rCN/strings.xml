@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_home_profile_picture">%s 的头像</string>
+    <string name="feature_home_add_user">添加用户</string>
+    <string name="feature_home_menu">菜单</string>
+    <string name="feature_home_hello">你好，%1$s</string>
+    <string name="feature_home_news">新闻</string>
+    <string name="feature_home_view_all_news">查看全部</string>
+    <string name="feature_home_attractions">景点</string>
+    <string name="feature_home_view_all_attractions">查看全部</string>
+    <string name="feature_home_news_subtitle">来自桃园市的最新旅游资讯</string>
+    <string name="feature_home_back">返回</string>
+    <string name="feature_home_no_data_found">暂无数据</string>
+    <string name="feature_home_retry">重试</string>
+    <string name="feature_home_an_error_occurred_please_try_again_later">发生错误，请稍后再试</string>
+    <string name="feature_home_choose_your_language">请选择语言</string>
+    <string name="feature_home_ok">确定</string>
+</resources>
