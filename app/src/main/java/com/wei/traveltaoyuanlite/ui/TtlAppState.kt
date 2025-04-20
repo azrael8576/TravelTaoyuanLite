@@ -27,6 +27,7 @@ import com.wei.traveltaoyuanlite.core.designsystem.ui.isBookPosture
 import com.wei.traveltaoyuanlite.core.designsystem.ui.isSeparating
 import com.wei.traveltaoyuanlite.feature.home.navigation.HOME_ROUTE
 import com.wei.traveltaoyuanlite.feature.home.navigation.navigateToHome
+import com.wei.traveltaoyuanlite.feature.webview.navigation.WEB_VIEW_ROUTE
 import com.wei.traveltaoyuanlite.navigation.TopLevelDestination
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
@@ -143,6 +144,7 @@ class TtlAppState(
     val isFullScreenCurrentDestination: Boolean
         @Composable get() = when (currentDestination?.route) {
             null -> true
+            WEB_VIEW_ROUTE -> true
             else -> false
         }
 
