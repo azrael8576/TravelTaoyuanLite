@@ -96,6 +96,5 @@ class HomeViewModel @Inject constructor(
      * @param action 用戶的 UI 操作。
      */
     override fun dispatch(action: HomeViewAction) {
-//        TODO("Not yet implemented")
     }
 }

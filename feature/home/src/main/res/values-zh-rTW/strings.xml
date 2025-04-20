@@ -5,8 +5,13 @@
     <string name="feature_home_menu">選單</string>
     <string name="feature_home_hello">Hello, %1$s</string>
     <string name="feature_home_news">最新消息</string>
-    <string name="feature_home_more_news">看更多</string>
+    <string name="feature_home_view_all_news">看全部</string>
     <string name="feature_home_attractions">熱門景點</string>
-    <string name="feature_home_more_attractions">看更多</string>
+    <string name="feature_home_view_all_attractions">看全部</string>
+    <string name="feature_home_news_subtitle">桃園市觀光最新消息</string>
+    <string name="feature_home_back">上一頁</string>
+    <string name="feature_home_no_data_found">沒有找到新聞</string>
+    <string name="feature_home_retry">重試</string>
+    <string name="feature_home_an_error_occurred_please_try_again_later">發生錯誤，請稍後再試</string>
 
 </resources>

@@ -1,0 +1,50 @@
+package com.wei.traveltaoyuanlite.feature.news
+
+import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
+import androidx.paging.cachedIn
+import androidx.paging.map
+import com.wei.traveltaoyuanlite.core.base.BaseViewModel
+import com.wei.traveltaoyuanlite.core.data.repository.EventRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
+import javax.inject.Inject
+
+const val TEST_LANG = "zh-tw"
+
+@HiltViewModel
+class NewsViewModel @Inject constructor(
+    eventRepository: EventRepository,
+) : BaseViewModel<
+    NewsViewAction,
+    NewsViewState,
+    >(NewsViewState()) {
+
+    val pagingNewsFlow: StateFlow<PagingData<NewsUiState>> =
+        eventRepository.getPagingEventNews(lang = TEST_LANG)
+            .map { pagingData ->
+                pagingData.map { eventNews ->
+                    eventNews.toNewsUiState()
+                }
+            }
+            .cachedIn(viewModelScope)
+            .stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(5_000),
+                initialValue = PagingData.empty(),
+            )
+
+    /**
+     * 處理用戶的 UI 操作，例如點擊一個按鈕。具體的實現將根據操作來更新狀態或發送事件。
+     *
+     * 通過 dispatch 統一進行事件的分發，有利於 View 與 ViewModel 間進一步解偶，
+     * 同時也方便進行日誌分析與後續處理。
+     *
+     * @param action 用戶的 UI 操作。
+     */
+    override fun dispatch(action: NewsViewAction) {
+    }
+}

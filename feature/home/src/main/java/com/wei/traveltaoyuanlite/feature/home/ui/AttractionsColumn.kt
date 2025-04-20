@@ -64,19 +64,19 @@ private fun AttractionsColumnTitle(
         Text(
             text = title,
             style = MaterialTheme.typography.titleLarge,
-            fontWeight = FontWeight.Normal,
+            fontWeight = FontWeight.SemiBold,
             modifier = Modifier
                 .testTag(title)
                 .semantics { contentDescription = title },
         )
         Spacer(Modifier.weight(1f))
-        MoreButton(onClick = onMoreClick)
+        ViewAllButton(onClick = onMoreClick)
     }
 }
 
 @Composable
-private fun MoreButton(onClick: () -> Unit) {
-    val label = stringResource(R.string.feature_home_more_attractions)
+private fun ViewAllButton(onClick: () -> Unit) {
+    val label = stringResource(R.string.feature_home_view_all_attractions)
     Row(
         modifier = Modifier.clickable(
             onClick = onClick,

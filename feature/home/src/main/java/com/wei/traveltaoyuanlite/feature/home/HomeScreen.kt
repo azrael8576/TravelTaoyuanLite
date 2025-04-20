@@ -32,6 +32,7 @@ import com.wei.traveltaoyuanlite.core.designsystem.theme.TtlTheme
 import com.wei.traveltaoyuanlite.feature.home.ui.AttractionsColumn
 import com.wei.traveltaoyuanlite.feature.home.ui.HomeTopBar
 import com.wei.traveltaoyuanlite.feature.home.ui.NewsColumn
+import com.wei.traveltaoyuanlite.feature.news.navigation.navigateToNews
 
 /**
  *
@@ -70,10 +71,14 @@ internal fun HomeRoute(
     navigateToWebView: (String, String) -> Unit,
 ) {
     val uiStates: HomeViewState by viewModel.states.collectAsStateWithLifecycle()
+
     HomeScreen(
         uiStates = uiStates,
         widthSizeClass = widthSizeClass,
         navigateToWebView = navigateToWebView,
+        navigateToNews = {
+            navController.navigateToNews()
+        },
     )
 }
 
@@ -83,8 +88,9 @@ internal fun HomeScreen(
     withTopSpacer: Boolean = true,
     withBottomSpacer: Boolean = true,
     widthSizeClass: WindowWidthSizeClass = WindowWidthSizeClass.Compact,
-    isPreview: Boolean = false,
     navigateToWebView: (String, String) -> Unit,
+    navigateToNews: () -> Unit,
+    isPreview: Boolean = false,
 ) {
     val showPopup = remember { mutableStateOf(false) }
 
@@ -147,6 +153,7 @@ internal fun HomeScreen(
                         modifier = horizontalBasePadding,
                         newsUiStateList = uiStates.newsUiStateList,
                         navigateToWebView = navigateToWebView,
+                        navigateToNews = navigateToNews,
                     )
                 }
 
@@ -181,8 +188,9 @@ fun HomeScreenPreview() {
                 newsLoadingState = NewsLoadingState.Finish(isSuccess = true),
                 newsUiStateList = emptyList(),
             ),
-            isPreview = true,
             navigateToWebView = { _, _ -> },
+            navigateToNews = {},
+            isPreview = true,
         )
     }
 }

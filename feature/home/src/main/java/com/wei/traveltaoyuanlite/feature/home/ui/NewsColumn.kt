@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import com.wei.traveltaoyuanlite.core.designsystem.component.ThemePreviews
 import com.wei.traveltaoyuanlite.core.designsystem.icon.TtlIcons
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
+import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_MEDIUM
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_SMALL
 import com.wei.traveltaoyuanlite.core.designsystem.theme.TtlTheme
 import com.wei.traveltaoyuanlite.feature.home.NewsUiState
@@ -36,16 +37,17 @@ fun NewsColumn(
     modifier: Modifier = Modifier,
     newsUiStateList: List<NewsUiState>,
     navigateToWebView: (String, String) -> Unit,
+    navigateToNews: () -> Unit,
 ) {
     Column(modifier = modifier.padding(top = SPACING_LARGE.dp)) {
-        NewsColumnTitle(onMoreClick = {})
+        NewsColumnTitle(onMoreClick = navigateToNews)
         Spacer(modifier = Modifier.height(SPACING_SMALL.dp))
         newsUiStateList.forEach { news ->
             NewsCard(
                 newsUiState = news,
                 navigateToWebView = navigateToWebView,
             )
-            Spacer(modifier = Modifier.height(SPACING_SMALL.dp))
+            Spacer(modifier = Modifier.height(SPACING_MEDIUM.dp))
         }
     }
 }
@@ -57,20 +59,20 @@ private fun NewsColumnTitle(onMoreClick: () -> Unit) {
         Text(
             text = news,
             style = MaterialTheme.typography.titleLarge,
-            fontWeight = FontWeight.Normal,
+            fontWeight = FontWeight.SemiBold,
             modifier =
             Modifier
                 .testTag(news)
                 .semantics { contentDescription = news },
         )
         Spacer(modifier = Modifier.weight(1f))
-        MoreButton(onClick = onMoreClick)
+        ViewAllButton(onClick = onMoreClick)
     }
 }
 
 @Composable
-private fun MoreButton(onClick: () -> Unit) {
-    val moreNews = stringResource(R.string.feature_home_more_news)
+private fun ViewAllButton(onClick: () -> Unit) {
+    val label = stringResource(R.string.feature_home_view_all_news)
     Row(
         modifier = Modifier.clickable(
             onClick = onClick,
@@ -84,14 +86,14 @@ private fun MoreButton(onClick: () -> Unit) {
         ),
     ) {
         Text(
-            text = moreNews,
+            text = label,
             color = MaterialTheme.colorScheme.outline,
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Normal,
             modifier =
             Modifier
-                .testTag(moreNews)
-                .semantics { contentDescription = moreNews },
+                .testTag(label)
+                .semantics { contentDescription = label },
         )
         Icon(
             modifier = Modifier.size(16.dp),
@@ -111,6 +113,7 @@ fun NewsColumPreview() {
                 modifier = Modifier.padding(horizontal = SPACING_LARGE.dp),
                 newsUiStateList = emptyList(),
                 navigateToWebView = { _, _ -> },
+                navigateToNews = {},
             )
         }
     }

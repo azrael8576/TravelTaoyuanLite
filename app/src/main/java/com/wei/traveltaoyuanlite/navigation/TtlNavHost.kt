@@ -9,6 +9,7 @@ import androidx.window.layout.DisplayFeature
 import com.wei.traveltaoyuanlite.core.designsystem.ui.DeviceOrientation
 import com.wei.traveltaoyuanlite.feature.home.navigation.HOME_ROUTE
 import com.wei.traveltaoyuanlite.feature.home.navigation.homeGraph
+import com.wei.traveltaoyuanlite.feature.news.navigation.newsScreen
 import com.wei.traveltaoyuanlite.feature.webview.navigation.navigateToWebView
 import com.wei.traveltaoyuanlite.feature.webview.navigation.webViewGraph
 import com.wei.traveltaoyuanlite.ui.TtlAppState
@@ -49,6 +50,17 @@ fun TtlNavHost(
                 navController.navigateToWebView(
                     url = url,
                     topBarTitle = topBarTitle,
+                )
+            },
+            nestedGraphs = {
+                newsScreen(
+                    navController = navController,
+                    navigateToWebView = { url, topBarTitle ->
+                        navController.navigateToWebView(
+                            url = url,
+                            topBarTitle = topBarTitle,
+                        )
+                    },
                 )
             },
         )
