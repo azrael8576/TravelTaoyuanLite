@@ -38,9 +38,10 @@ fun AttractionsColumn(
     modifier: Modifier = Modifier,
     attractionsList: List<AttractionUiState>,
     widthSizeClass: WindowWidthSizeClass = WindowWidthSizeClass.Compact,
+    onViewAllClick: () -> Unit,
 ) {
     Column(modifier = modifier) {
-        AttractionsColumnTitle(onMoreClick = {})
+        AttractionsColumnTitle(onViewAllClick = onViewAllClick)
         Spacer(Modifier.height(SPACING_SMALL.dp))
         if (attractionsList.isNotEmpty()) {
             AttractionsCarousel(
@@ -54,7 +55,7 @@ fun AttractionsColumn(
 @Composable
 private fun AttractionsColumnTitle(
     modifier: Modifier = Modifier,
-    onMoreClick: () -> Unit,
+    onViewAllClick: () -> Unit,
 ) {
     Row(
         modifier = modifier,
@@ -70,7 +71,7 @@ private fun AttractionsColumnTitle(
                 .semantics { contentDescription = title },
         )
         Spacer(Modifier.weight(1f))
-        ViewAllButton(onClick = onMoreClick)
+        ViewAllButton(onClick = onViewAllClick)
     }
 }
 
@@ -112,6 +113,7 @@ fun AttractionsColumnPreview() {
                 modifier = Modifier.padding(horizontal = SPACING_LARGE.dp),
                 attractionsList = fakeAttractionsList,
                 widthSizeClass = WindowWidthSizeClass.Compact,
+                onViewAllClick = {},
             )
         }
     }

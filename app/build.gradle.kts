@@ -74,6 +74,7 @@ dependencies {
 
     implementation(projects.feature.home)
     implementation(projects.feature.webview)
+    implementation(projects.feature.attractions)
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)

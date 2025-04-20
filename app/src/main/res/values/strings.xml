@@ -2,6 +2,7 @@
     <string name="app_name">Travel Taoyuan Lite</string>
     <string name="not_connected">⚠️ You aren’t connected to the internet</string>
     <string name="home">Home</string>
+    <string name="attraction">Attraction</string>
     <string name="setting">Setting</string>
 
     <!-- Test tag -->

@@ -4,9 +4,7 @@ import com.wei.traveltaoyuanlite.core.base.Action
 import com.wei.traveltaoyuanlite.core.base.State
 import com.wei.traveltaoyuanlite.core.model.data.EventNews
 
-sealed class NewsViewAction : Action {
-    data object Call : NewsViewAction()
-}
+sealed class NewsViewAction : Action
 
 data class NewsViewState(
     val newsLoadingState: NewsLoadingState = NewsLoadingState.Idle,

@@ -17,6 +17,7 @@ fun NavGraphBuilder.homeGraph(
     navController: NavController,
     widthSizeClass: WindowWidthSizeClass,
     navigateToWebView: (String, String) -> Unit,
+    navigateToAttractions: () -> Unit,
     nestedGraphs: NavGraphBuilder.() -> Unit,
 ) {
     composable(route = HOME_ROUTE) {
@@ -24,6 +25,7 @@ fun NavGraphBuilder.homeGraph(
             navController = navController,
             widthSizeClass = widthSizeClass,
             navigateToWebView = navigateToWebView,
+            navigateToAttractions = navigateToAttractions,
         )
     }
     nestedGraphs()

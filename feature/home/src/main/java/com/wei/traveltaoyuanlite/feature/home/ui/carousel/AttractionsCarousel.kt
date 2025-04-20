@@ -3,6 +3,7 @@ package com.wei.traveltaoyuanlite.feature.home.ui.carousel
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -21,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
@@ -50,7 +52,7 @@ fun AttractionsCarousel(
             .height(221.dp),
     ) { index ->
         AttractionCard(
-            item = attractionsList[index],
+            attraction = attractionsList[index],
             modifier = Modifier.width(cardWidth),
         )
     }
@@ -59,16 +61,15 @@ fun AttractionsCarousel(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun CarouselItemScope.AttractionCard(
-    item: AttractionUiState,
+    attraction: AttractionUiState,
     modifier: Modifier = Modifier,
 ) {
-    val painterState = coilImagePainter(item.imageUrl)
-    // 根據選取程度決定是否顯示文字
-    val fraction = (
+    val painterState = coilImagePainter(attraction.imageUrl)
+    val expansionFraction = (
         (carouselItemDrawInfo.size - carouselItemDrawInfo.minSize) /
             (carouselItemDrawInfo.maxSize - carouselItemDrawInfo.minSize).coerceAtLeast(1f)
         )
-    val showText = fraction > 0.33f
+    val showText = expansionFraction > 0.33f
 
     Box(
         modifier
@@ -77,15 +78,24 @@ private fun CarouselItemScope.AttractionCard(
             .maskClip(MaterialTheme.shapes.extraLarge)
             .background(MaterialTheme.colorScheme.surfaceVariant),
     ) {
+        AttractionImageBackground(painterState.painter)
+        if (showText) {
+            AttractionInfoOverlay(attraction.name)
+        }
+    }
+}
+
+@Composable
+private fun BoxScope.AttractionImageBackground(painter: Painter) {
+    Box(Modifier.matchParentSize()) {
         Image(
-            painter = painterState.painter,
-            contentDescription = item.name,
+            painter = painter,
+            contentDescription = null,
             modifier = Modifier.matchParentSize(),
             contentScale = ContentScale.Crop,
         )
-        // 底部漸層
         Box(
-            Modifier
+            modifier = Modifier
                 .matchParentSize()
                 .background(
                     Brush.verticalGradient(
@@ -94,25 +104,29 @@ private fun CarouselItemScope.AttractionCard(
                     ),
                 ),
         )
-        if (showText) {
-            val (offsetDp, widthDp) = with(LocalDensity.current) {
-                carouselItemDrawInfo.maskRect.left.toDp() to carouselItemDrawInfo.maskRect.width.toDp()
-            }
-            Box(
-                Modifier
-                    .offset(x = offsetDp)
-                    .width(widthDp)
-                    .fillMaxHeight(),
-            ) {
-                Text(
-                    text = item.name,
-                    style = MaterialTheme.typography.titleMedium.copy(color = Color.White),
-                    maxLines = 1,
-                    modifier = Modifier
-                        .align(Alignment.BottomStart)
-                        .padding(SPACING_LARGE.dp),
-                )
-            }
-        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun CarouselItemScope.AttractionInfoOverlay(text: String) {
+    val (offsetDp, widthDp) = with(LocalDensity.current) {
+        carouselItemDrawInfo.maskRect.left.toDp() to carouselItemDrawInfo.maskRect.width.toDp()
+    }
+
+    Box(
+        modifier = Modifier
+            .offset(x = offsetDp)
+            .width(widthDp)
+            .fillMaxHeight(),
+    ) {
+        Text(
+            text = text,
+            style = MaterialTheme.typography.titleMedium.copy(color = Color.White),
+            maxLines = 1,
+            modifier = Modifier
+                .align(Alignment.BottomStart)
+                .padding(SPACING_LARGE.dp),
+        )
     }
 }

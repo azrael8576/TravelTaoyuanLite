@@ -71,6 +71,7 @@ internal fun HomeRoute(
     viewModel: HomeViewModel = hiltViewModel(),
     widthSizeClass: WindowWidthSizeClass,
     navigateToWebView: (String, String) -> Unit,
+    navigateToAttractions: () -> Unit,
 ) {
     val uiStates: HomeViewState by viewModel.states.collectAsStateWithLifecycle()
 
@@ -88,6 +89,7 @@ internal fun HomeRoute(
         navigateToNews = {
             navController.navigateToNews()
         },
+        navigateToAttractions = navigateToAttractions,
     )
 }
 
@@ -100,6 +102,7 @@ internal fun HomeScreen(
     onSwitchLanguage: (AppLocale) -> Unit,
     navigateToWebView: (String, String) -> Unit,
     navigateToNews: () -> Unit,
+    navigateToAttractions: () -> Unit,
     isPreview: Boolean = false,
 ) {
     val showPopup = remember { mutableStateOf(false) }
@@ -177,7 +180,7 @@ internal fun HomeScreen(
                         modifier = horizontalBasePadding,
                         newsUiStateList = uiStates.newsUiStateList,
                         navigateToWebView = navigateToWebView,
-                        navigateToNews = navigateToNews,
+                        onViewAllClick = navigateToNews,
                     )
                 }
 
@@ -190,6 +193,7 @@ internal fun HomeScreen(
                         modifier = horizontalBasePadding,
                         attractionsList = uiStates.attractionsUiStateList,
                         widthSizeClass = widthSizeClass,
+                        onViewAllClick = navigateToAttractions,
                     )
                 }
             }
@@ -215,6 +219,7 @@ fun HomeScreenPreview() {
             onSwitchLanguage = {},
             navigateToWebView = { _, _ -> },
             navigateToNews = {},
+            navigateToAttractions = {},
             isPreview = true,
         )
     }

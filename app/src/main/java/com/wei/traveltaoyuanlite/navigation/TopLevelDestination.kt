@@ -21,10 +21,10 @@ enum class TopLevelDestination(
         iconTextId = R.string.home,
         titleTextId = R.string.home,
     ),
-    SETTING(
-        selectedIcon = TtlIcons.Settings,
-        unselectedIcon = TtlIcons.SettingsBorder,
-        iconTextId = R.string.setting,
-        titleTextId = R.string.setting,
+    ATTRACTION(
+        selectedIcon = TtlIcons.TravelExplore,
+        unselectedIcon = TtlIcons.TravelExploreBorder,
+        iconTextId = R.string.attraction,
+        titleTextId = R.string.attraction,
     ),
 }
