@@ -8,6 +8,7 @@ import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Upcoming
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Home
+import androidx.compose.material.icons.rounded.Language
 import androidx.compose.material.icons.rounded.Menu
 import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material.icons.rounded.Upcoming
@@ -27,4 +28,5 @@ object TtlIcons {
     val UpcomingBorder = Icons.Outlined.Upcoming
     val Add = Icons.Rounded.Add
     val Menu = Icons.Rounded.Menu
+    val Language = Icons.Rounded.Language
 }

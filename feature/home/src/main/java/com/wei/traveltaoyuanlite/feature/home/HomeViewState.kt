@@ -1,15 +1,17 @@
 package com.wei.traveltaoyuanlite.feature.home
 
+import com.wei.traveltaoyuanlite.core.AppLocale
 import com.wei.traveltaoyuanlite.core.base.Action
 import com.wei.traveltaoyuanlite.core.base.State
 import com.wei.traveltaoyuanlite.core.model.data.EventNews
 import com.wei.traveltaoyuanlite.core.model.data.TravelAttraction
 
 sealed class HomeViewAction : Action {
-    data object Call : HomeViewAction()
+    data class SwitchLanguage(val appLocale: AppLocale) : HomeViewAction()
 }
 
 data class HomeViewState(
+    val currentLanguage: AppLocale = AppLocale.EN,
     val newsLoadingState: NewsLoadingState = NewsLoadingState.Idle,
     val attractionsLoadingState: AttractionsLoadingState = AttractionsLoadingState.Idle,
     val newsUiStateList: List<NewsUiState> = emptyList(),

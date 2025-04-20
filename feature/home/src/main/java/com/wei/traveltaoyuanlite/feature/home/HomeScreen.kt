@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
+import com.wei.traveltaoyuanlite.core.AppLocale
 import com.wei.traveltaoyuanlite.core.designsystem.component.FunctionalityNotAvailablePopup
 import com.wei.traveltaoyuanlite.core.designsystem.component.ThemePreviews
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
@@ -32,6 +33,7 @@ import com.wei.traveltaoyuanlite.core.designsystem.theme.TtlTheme
 import com.wei.traveltaoyuanlite.feature.home.ui.AttractionsColumn
 import com.wei.traveltaoyuanlite.feature.home.ui.HomeTopBar
 import com.wei.traveltaoyuanlite.feature.home.ui.NewsColumn
+import com.wei.traveltaoyuanlite.feature.home.ui.SwitchLanguageDialog
 import com.wei.traveltaoyuanlite.feature.news.navigation.navigateToNews
 
 /**
@@ -75,6 +77,13 @@ internal fun HomeRoute(
     HomeScreen(
         uiStates = uiStates,
         widthSizeClass = widthSizeClass,
+        onSwitchLanguage = { appLocale ->
+            viewModel.dispatch(
+                HomeViewAction.SwitchLanguage(
+                    appLocale,
+                ),
+            )
+        },
         navigateToWebView = navigateToWebView,
         navigateToNews = {
             navController.navigateToNews()
@@ -88,16 +97,32 @@ internal fun HomeScreen(
     withTopSpacer: Boolean = true,
     withBottomSpacer: Boolean = true,
     widthSizeClass: WindowWidthSizeClass = WindowWidthSizeClass.Compact,
+    onSwitchLanguage: (AppLocale) -> Unit,
     navigateToWebView: (String, String) -> Unit,
     navigateToNews: () -> Unit,
     isPreview: Boolean = false,
 ) {
     val showPopup = remember { mutableStateOf(false) }
+    val showSwitchLanguageDialog = remember { mutableStateOf(false) }
 
     if (showPopup.value) {
         FunctionalityNotAvailablePopup(
             onDismiss = {
                 showPopup.value = false
+            },
+        )
+    }
+
+    if (showSwitchLanguageDialog.value) {
+        SwitchLanguageDialog(
+            onDismissRequest = {
+                showSwitchLanguageDialog.value = false
+            },
+            currentLocale = uiStates.currentLanguage,
+            onConfirmation = { selectedLocale ->
+                showSwitchLanguageDialog.value = false
+                if (selectedLocale == uiStates.currentLanguage) return@SwitchLanguageDialog
+                onSwitchLanguage(selectedLocale)
             },
         )
     }
@@ -130,8 +155,7 @@ internal fun HomeScreen(
                         showPopup.value = true
                     },
                     onMenuClick = {
-                        // TODO
-                        showPopup.value = true
+                        showSwitchLanguageDialog.value = true
                     },
                 )
             }
@@ -188,6 +212,7 @@ fun HomeScreenPreview() {
                 newsLoadingState = NewsLoadingState.Finish(isSuccess = true),
                 newsUiStateList = emptyList(),
             ),
+            onSwitchLanguage = {},
             navigateToWebView = { _, _ -> },
             navigateToNews = {},
             isPreview = true,

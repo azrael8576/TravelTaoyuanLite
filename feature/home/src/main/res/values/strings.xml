@@ -13,6 +13,8 @@
     <string name="feature_home_no_data_found">No Data Found</string>
     <string name="feature_home_retry">Retry</string>
     <string name="feature_home_an_error_occurred_please_try_again_later">An error occurred, please try again later</string>
+    <string name="feature_home_choose_your_language">choose your language</string>
+    <string name="feature_home_ok">OK</string>
 
     <!-- Test tag -->
     <string name="feature_home_tag_user_avatar" translatable="false">UserAvatar</string>

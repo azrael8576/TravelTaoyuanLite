@@ -6,31 +6,35 @@ import androidx.paging.cachedIn
 import androidx.paging.map
 import com.wei.traveltaoyuanlite.core.base.BaseViewModel
 import com.wei.traveltaoyuanlite.core.data.repository.EventRepository
+import com.wei.traveltaoyuanlite.core.data.repository.SettingsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
-const val TEST_LANG = "zh-tw"
-
 @HiltViewModel
 class NewsViewModel @Inject constructor(
-    eventRepository: EventRepository,
+    private val eventRepository: EventRepository,
+    private val settingsRepository: SettingsRepository,
 ) : BaseViewModel<
     NewsViewAction,
     NewsViewState,
     >(NewsViewState()) {
 
     val pagingNewsFlow: StateFlow<PagingData<NewsUiState>> =
-        eventRepository.getPagingEventNews(lang = TEST_LANG)
-            .map { pagingData ->
-                pagingData.map { eventNews ->
-                    eventNews.toNewsUiState()
-                }
+        settingsRepository.languageFlow
+            .flatMapLatest { lang ->
+                eventRepository.getPagingEventNews(lang = lang.apiArg)
+                    .map { pagingData ->
+                        pagingData.map { eventNews ->
+                            eventNews.toNewsUiState()
+                        }
+                    }
+                    .cachedIn(viewModelScope)
             }
-            .cachedIn(viewModelScope)
             .stateIn(
                 scope = viewModelScope,
                 started = SharingStarted.WhileSubscribed(5_000),

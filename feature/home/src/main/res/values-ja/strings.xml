@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_home_profile_picture">%sのプロフィール写真</string>
+    <string name="feature_home_add_user">ユーザーを追加</string>
+    <string name="feature_home_menu">メニュー</string>
+    <string name="feature_home_hello">こんにちは、%1$s</string>
+    <string name="feature_home_news">ニュース</string>
+    <string name="feature_home_view_all_news">もっと見る</string>
+    <string name="feature_home_attractions">観光地</string>
+    <string name="feature_home_view_all_attractions">もっと見る</string>
+    <string name="feature_home_news_subtitle">桃園市からの最新観光ニュース</string>
+    <string name="feature_home_back">戻る</string>
+    <string name="feature_home_no_data_found">データが見つかりません</string>
+    <string name="feature_home_retry">再試行</string>
+    <string name="feature_home_an_error_occurred_please_try_again_later">エラーが発生しました。後でもう一度お試しください。</string>
+    <string name="feature_home_choose_your_language">言語を選択</string>
+    <string name="feature_home_ok">OK</string>
+</resources>

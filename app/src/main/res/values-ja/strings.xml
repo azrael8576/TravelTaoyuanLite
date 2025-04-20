@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Travel Taoyuan Lite</string>
+    <string name="not_connected">⚠️ インターネットに接続されていません</string>
+    <string name="home">ホーム</string>
+    <string name="setting">設定</string>
+</resources>
