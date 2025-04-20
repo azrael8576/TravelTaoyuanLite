@@ -35,12 +35,16 @@ import com.wei.traveltaoyuanlite.feature.home.R
 fun NewsColumn(
     modifier: Modifier = Modifier,
     newsUiStateList: List<NewsUiState>,
+    navigateToWebView: (String, String) -> Unit,
 ) {
     Column(modifier = modifier.padding(top = SPACING_LARGE.dp)) {
         NewsColumnTitle(onMoreClick = {})
         Spacer(modifier = Modifier.height(SPACING_SMALL.dp))
         newsUiStateList.forEach { news ->
-            NewsCard(newsUiState = news)
+            NewsCard(
+                newsUiState = news,
+                navigateToWebView = navigateToWebView,
+            )
             Spacer(modifier = Modifier.height(SPACING_SMALL.dp))
         }
     }
@@ -106,6 +110,7 @@ fun NewsColumPreview() {
             NewsColumn(
                 modifier = Modifier.padding(horizontal = SPACING_LARGE.dp),
                 newsUiStateList = emptyList(),
+                navigateToWebView = { _, _ -> },
             )
         }
     }

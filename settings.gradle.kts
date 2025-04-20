@@ -41,5 +41,6 @@ include(":core:network")
 include(":core:testing")
 
 include(":feature:home")
+include(":feature:webview")
 
 include(":ui-test-hilt-manifest")

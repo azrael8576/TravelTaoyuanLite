@@ -1,5 +1,7 @@
 package com.wei.traveltaoyuanlite.navigation
 
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
@@ -7,6 +9,8 @@ import androidx.window.layout.DisplayFeature
 import com.wei.traveltaoyuanlite.core.designsystem.ui.DeviceOrientation
 import com.wei.traveltaoyuanlite.feature.home.navigation.HOME_ROUTE
 import com.wei.traveltaoyuanlite.feature.home.navigation.homeGraph
+import com.wei.traveltaoyuanlite.feature.webview.navigation.navigateToWebView
+import com.wei.traveltaoyuanlite.feature.webview.navigation.webViewGraph
 import com.wei.traveltaoyuanlite.ui.TtlAppState
 
 /**
@@ -33,10 +37,23 @@ fun TtlNavHost(
         navController = navController,
         startDestination = startDestination,
         modifier = modifier,
+        enterTransition = { EnterTransition.None },
+        exitTransition = { ExitTransition.None },
+        popEnterTransition = { EnterTransition.None },
+        popExitTransition = { ExitTransition.None },
     ) {
         homeGraph(
             navController = navController,
             widthSizeClass = windowSizeClass.widthSizeClass,
+            navigateToWebView = { url, topBarTitle ->
+                navController.navigateToWebView(
+                    url = url,
+                    topBarTitle = topBarTitle,
+                )
+            },
+        )
+        webViewGraph(
+            navController = navController,
         )
     }
 }

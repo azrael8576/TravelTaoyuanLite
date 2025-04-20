@@ -16,11 +16,13 @@ fun NavController.navigateToHome(navOptions: NavOptions? = null) {
 fun NavGraphBuilder.homeGraph(
     navController: NavController,
     widthSizeClass: WindowWidthSizeClass,
+    navigateToWebView: (String, String) -> Unit,
 ) {
     composable(route = HOME_ROUTE) {
         HomeRoute(
             navController = navController,
             widthSizeClass = widthSizeClass,
+            navigateToWebView = navigateToWebView,
         )
     }
 }
