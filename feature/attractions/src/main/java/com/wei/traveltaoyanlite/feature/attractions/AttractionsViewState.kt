@@ -3,14 +3,14 @@ package com.wei.traveltaoyanlite.feature.attractions
 import com.wei.traveltaoyuanlite.core.AppLocale
 import com.wei.traveltaoyuanlite.core.base.Action
 import com.wei.traveltaoyuanlite.core.base.State
-import com.wei.traveltaoyuanlite.core.model.data.TravelAttraction
+import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
 
 sealed class AttractionsViewAction : Action
 
 data class AttractionsViewState(
     val currentLanguage: AppLocale = AppLocale.EN,
     val attractionsLoadingState: AttractionsLoadingState = AttractionsLoadingState.Idle,
-    val attractionsUiStateList: List<AttractionUiState> = emptyList(),
+    val attractionUiStateList: List<AttractionDetailNavArgs> = emptyList(),
 ) : State {
     val loadingFinish: Boolean
         get() =
@@ -25,16 +25,4 @@ sealed interface AttractionsLoadingState {
     data class Finish(
         val isSuccess: Boolean,
     ) : AttractionsLoadingState
-}
-
-data class AttractionUiState(
-    val name: String,
-    val imageUrl: String,
-)
-
-fun TravelAttraction.toAttractionUiState(): AttractionUiState {
-    return AttractionUiState(
-        name = name,
-        imageUrl = if (images.isNotEmpty()) images.first().src else "",
-    )
 }

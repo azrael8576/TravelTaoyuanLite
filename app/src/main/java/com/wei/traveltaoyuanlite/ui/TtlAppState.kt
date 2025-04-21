@@ -17,6 +17,7 @@ import androidx.navigation.navOptions
 import androidx.tracing.trace
 import androidx.window.layout.DisplayFeature
 import androidx.window.layout.FoldingFeature
+import com.wei.traveltaoyanlite.feature.attractiondetail.navigation.ATTRACTION_DETAIL_ROUTE
 import com.wei.traveltaoyanlite.feature.attractions.navigation.ATTRACTIONS_ROUTE
 import com.wei.traveltaoyanlite.feature.attractions.navigation.navigateToAttractions
 import com.wei.traveltaoyuanlite.core.data.utils.NetworkMonitor
@@ -149,6 +150,7 @@ class TtlAppState(
             null -> true
             WEB_VIEW_ROUTE -> true
             NEWS_ROUTE -> true
+            ATTRACTION_DETAIL_ROUTE -> true
             else -> false
         }
 

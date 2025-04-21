@@ -32,7 +32,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
-import com.wei.traveltaoyanlite.feature.attractions.AttractionUiState
+import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
 import com.wei.traveltaoyuanlite.core.designsystem.component.coilImagePainter
 import com.wei.traveltaoyuanlite.core.designsystem.icon.TtlIcons
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
@@ -42,9 +42,9 @@ import com.wei.traveltaoyuanlite.feature.attractions.R
 @Composable
 internal fun AttractionsGrid(
     modifier: Modifier,
-    lazyPagingItems: LazyPagingItems<AttractionUiState>,
-    onAttractionCardClick: () -> Unit,
+    lazyPagingItems: LazyPagingItems<AttractionDetailNavArgs>,
     onBookmarkClick: () -> Unit,
+    navigateToAttractionDetail: (AttractionDetailNavArgs) -> Unit,
 ) {
     LazyVerticalGrid(
         modifier = modifier,
@@ -59,7 +59,7 @@ internal fun AttractionsGrid(
                     modifier = Modifier
                         .height(232.dp)
                         .clickable(
-                            onClick = onAttractionCardClick,
+                            onClick = { navigateToAttractionDetail(attractionUiState) },
                         ),
                     attractionUiState = attractionUiState,
                     onBookmarkClick = onBookmarkClick,
@@ -72,7 +72,7 @@ internal fun AttractionsGrid(
 @Composable
 internal fun AttractionCard(
     modifier: Modifier = Modifier,
-    attractionUiState: AttractionUiState,
+    attractionUiState: AttractionDetailNavArgs,
     onBookmarkClick: () -> Unit,
 ) {
     Card(
@@ -82,7 +82,8 @@ internal fun AttractionCard(
         shape = RoundedCornerShape(40.dp),
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
-            AttractionImageWithGradient(attractionUiState.imageUrl)
+            if (attractionUiState.images.isEmpty()) return@Card
+            AttractionImageWithGradient(attractionUiState.images[0])
 
             Column(modifier = Modifier.fillMaxSize()) {
                 AttractionBookmarkButton(onClick = onBookmarkClick)

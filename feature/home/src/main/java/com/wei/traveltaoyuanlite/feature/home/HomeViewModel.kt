@@ -6,6 +6,7 @@ import androidx.core.os.LocaleListCompat
 import androidx.lifecycle.viewModelScope
 import com.wei.traveltaoyuanlite.core.AppLocale
 import com.wei.traveltaoyuanlite.core.base.BaseViewModel
+import com.wei.traveltaoyuanlite.core.data.navigation.toAttractionUiState
 import com.wei.traveltaoyuanlite.core.data.repository.EventRepository
 import com.wei.traveltaoyuanlite.core.data.repository.SettingsRepository
 import com.wei.traveltaoyuanlite.core.data.repository.TravelRepository
