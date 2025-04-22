@@ -1,8 +1,5 @@
 # 旅桃Lite
-[![Android CI](https://github.com/azrael8576/TravelTaoyuanLite/actions/workflows/Build.yml/badge.svg?branch=main)](https://github.com/azrael8576/TravelTaoyuanLite/actions/workflows/Build.yml)  
-[![GitHub release (with filter)](https://img.shields.io/github/v/release/azrael8576/TravelTaoyuanLite)](https://github.com/azrael8576/TravelTaoyuanLite/releases)  
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/azrael8576/TravelTaoyuanLite/blob/main/LICENSE)
-
+[![Android CI](https://github.com/azrael8576/TravelTaoyuanLite/actions/workflows/Build.yml/badge.svg?branch=main)](https://github.com/azrael8576/TravelTaoyuanLite/actions/workflows/Build.yml)  [![GitHub release (with filter)](https://img.shields.io/github/v/release/azrael8576/TravelTaoyuanLite)](https://github.com/azrael8576/TravelTaoyuanLite/releases)  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/azrael8576/TravelTaoyuanLite/blob/main/LICENSE)
 
 「旅桃Lite」是專為探索桃園打造的行動導覽 App，輕量化設計、體驗流暢，讓你輕鬆掌握景點資訊與活動動態，無論你是當地居民還是外地旅客，都能在指尖完成探索。
 
