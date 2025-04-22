@@ -8,11 +8,10 @@
 
 ### Phone
 
+<img src="https://github.com/azrael8576/TravelTaoyuanLite/blob/main/docs/demo/demo-phone.gif" alt="Demo-Phone">
 
 ### Tablet
-
-
-### Fold
+<img src="https://github.com/azrael8576/TravelTaoyuanLite/blob/main/docs/demo/demo-tablet.gif" alt="Demo-Tablet">
 
 
 ## Tech stack
