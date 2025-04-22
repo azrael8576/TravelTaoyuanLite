@@ -42,7 +42,7 @@ class FakeTtlNetworkDataSource(
     }
 
     @OptIn(ExperimentalSerializationApi::class)
-    override suspend fun getEventNews(lang: String, page: Int): NetworkResponse<NetworkEventNews>  =
+    override suspend fun getEventNews(lang: String, page: Int): NetworkResponse<NetworkEventNews> =
         withContext(ioDispatcher) {
             if (shouldReturnErrorForEventNews) {
                 throw Exception("Fake exception for event news")
