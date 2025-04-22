@@ -1,4 +1,4 @@
-package com.wei.traveltaoyanlite.feature.attractions.ui
+package com.wei.traveltaoyuanlite.feature.attractions.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

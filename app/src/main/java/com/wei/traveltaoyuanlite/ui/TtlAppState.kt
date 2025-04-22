@@ -17,9 +17,6 @@ import androidx.navigation.navOptions
 import androidx.tracing.trace
 import androidx.window.layout.DisplayFeature
 import androidx.window.layout.FoldingFeature
-import com.wei.traveltaoyanlite.feature.attractiondetail.navigation.ATTRACTION_DETAIL_ROUTE
-import com.wei.traveltaoyanlite.feature.attractions.navigation.ATTRACTIONS_ROUTE
-import com.wei.traveltaoyanlite.feature.attractions.navigation.navigateToAttractions
 import com.wei.traveltaoyuanlite.core.data.utils.NetworkMonitor
 import com.wei.traveltaoyuanlite.core.designsystem.ui.DeviceOrientation
 import com.wei.traveltaoyuanlite.core.designsystem.ui.DevicePosture
@@ -28,6 +25,9 @@ import com.wei.traveltaoyuanlite.core.designsystem.ui.TtlNavigationType
 import com.wei.traveltaoyuanlite.core.designsystem.ui.currentDeviceOrientation
 import com.wei.traveltaoyuanlite.core.designsystem.ui.isBookPosture
 import com.wei.traveltaoyuanlite.core.designsystem.ui.isSeparating
+import com.wei.traveltaoyuanlite.feature.attractiondetail.navigation.ATTRACTION_DETAIL_ROUTE
+import com.wei.traveltaoyuanlite.feature.attractions.navigation.ATTRACTIONS_ROUTE
+import com.wei.traveltaoyuanlite.feature.attractions.navigation.navigateToAttractions
 import com.wei.traveltaoyuanlite.feature.home.navigation.HOME_ROUTE
 import com.wei.traveltaoyuanlite.feature.home.navigation.navigateToHome
 import com.wei.traveltaoyuanlite.feature.news.navigation.NEWS_ROUTE

@@ -1,4 +1,4 @@
-package com.wei.traveltaoyanlite.feature.attractions
+package com.wei.traveltaoyuanlite.feature.attractions
 
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData

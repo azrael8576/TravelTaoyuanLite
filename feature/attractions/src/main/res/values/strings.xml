@@ -4,7 +4,9 @@
     <string name="feature_attractions_retry">Retry</string>
     <string name="feature_attractions_an_error_occurred_please_try_again_later">An error occurred, please try again later</string>
     <string name="feature_attractions_back">Back</string>
-    <string name="feature_attractions_bookmark">bookmark</string>
-    <string name="feature_attractions_filter">filter</string>
+    <string name="feature_attractions_bookmark">Bookmark</string>
+    <string name="feature_attractions_filter">Filter</string>
     <string name="feature_attractions_select_destination">Select destination</string>
+    <string name="feature_attractions_share">Share</string>
+    <string name="feature_attractions_map">Map</string>
 </resources>

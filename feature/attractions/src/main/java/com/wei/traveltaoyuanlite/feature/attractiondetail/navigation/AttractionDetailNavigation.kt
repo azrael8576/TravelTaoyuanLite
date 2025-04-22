@@ -1,11 +1,11 @@
-package com.wei.traveltaoyanlite.feature.attractiondetail.navigation
+package com.wei.traveltaoyuanlite.feature.attractiondetail.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import com.wei.traveltaoyanlite.feature.attractiondetail.AttractionDetailRoute
 import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
+import com.wei.traveltaoyuanlite.feature.attractiondetail.AttractionDetailRoute
 
 const val ATTRACTION_DETAIL_ROUTE = "attraction_detail_route"
 const val ARG_ATTRACTION_DETAIL = "attraction_detail"

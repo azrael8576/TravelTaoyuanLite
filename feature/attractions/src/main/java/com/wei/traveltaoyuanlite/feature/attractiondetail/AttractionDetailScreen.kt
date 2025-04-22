@@ -1,24 +1,33 @@
-package com.wei.traveltaoyanlite.feature.attractiondetail
+package com.wei.traveltaoyuanlite.feature.attractiondetail
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsBottomHeight
-import androidx.compose.foundation.layout.windowInsetsTopHeight
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
 import com.wei.traveltaoyuanlite.core.designsystem.component.FunctionalityNotAvailablePopup
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
+import com.wei.traveltaoyuanlite.feature.attractiondetail.ui.AttractionDescriptionColumn
+import com.wei.traveltaoyuanlite.feature.attractiondetail.ui.AttractionDetailTopBar
+import com.wei.traveltaoyuanlite.feature.attractiondetail.ui.AttractionImageWithGradient
+import com.wei.traveltaoyuanlite.feature.attractiondetail.ui.AttractionPrimaryColumn
 
 /**
  *
@@ -52,16 +61,26 @@ import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
 @Composable
 internal fun AttractionDetailRoute(
     navController: NavController,
+    viewModel: AttractionDetailViewModel = hiltViewModel(),
     args: AttractionDetailNavArgs,
 ) {
-    AttractionDetailScreen(args = args)
+    LaunchedEffect(args) {
+        viewModel.dispatch(AttractionDetailViewAction.Init(args))
+    }
+
+    val uiStates: AttractionDetailViewState by viewModel.states.collectAsStateWithLifecycle()
+    AttractionDetailScreen(
+        uiStates = uiStates,
+        onBackClick = navController::popBackStack,
+    )
 }
 
 @Composable
 internal fun AttractionDetailScreen(
     withTopSpacer: Boolean = true,
     withBottomSpacer: Boolean = true,
-    args: AttractionDetailNavArgs,
+    uiStates: AttractionDetailViewState,
+    onBackClick: () -> Unit,
 ) {
     val showPopup = remember { mutableStateOf(false) }
 
@@ -73,17 +92,62 @@ internal fun AttractionDetailScreen(
         )
     }
 
-    val horizontalBasePadding = Modifier.padding(horizontal = SPACING_LARGE.dp)
     Surface {
-        Column(modifier = horizontalBasePadding) {
-            if (withTopSpacer) {
-                Spacer(Modifier.windowInsetsTopHeight(WindowInsets.safeDrawing))
+        val horizontalBasePadding = Modifier.padding(horizontal = SPACING_LARGE.dp)
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
+            val uiStates = uiStates.attractionDetailUiState
+            if (uiStates != null) {
+                item {
+                    AttractionDetailContent(
+                        modifier = horizontalBasePadding,
+                        uiStates = uiStates,
+                        onBookmarkClick = { showPopup.value = true },
+                        onAddressClick = { showPopup.value = true },
+                        onPhoneClick = { showPopup.value = true },
+                    )
+                }
             }
-            Text("AttractionDetailScreen", style = MaterialTheme.typography.headlineLarge)
-            Text(args.name, style = MaterialTheme.typography.headlineLarge)
             if (withBottomSpacer) {
-                Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.safeDrawing))
+                item {
+                    Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.safeDrawing))
+                }
             }
+        }
+        AttractionDetailTopBar(
+            modifier = horizontalBasePadding,
+            withTopSpacer = withTopSpacer,
+            onBackClick = onBackClick,
+            onShareClick = { showPopup.value = true },
+            onMapClick = { showPopup.value = true },
+        )
+    }
+}
+
+@Composable
+private fun AttractionDetailContent(
+    modifier: Modifier = Modifier,
+    uiStates: AttractionDetailNavArgs,
+    onBookmarkClick: () -> Unit,
+    onAddressClick: () -> Unit,
+    onPhoneClick: () -> Unit,
+) {
+    Box {
+        if (uiStates.images.isNotEmpty()) {
+            AttractionImageWithGradient(
+                modifier = Modifier.height(520.dp),
+                imageUrlList = uiStates.images,
+            )
+        }
+        Column(modifier = modifier.fillMaxSize()) {
+            AttractionPrimaryColumn(
+                uiStates = uiStates,
+                onBookmarkClick = onBookmarkClick,
+            )
+            AttractionDescriptionColumn(
+                uiStates = uiStates,
+                onAddressClick = onAddressClick,
+                onPhoneClick = onPhoneClick,
+            )
         }
     }
 }

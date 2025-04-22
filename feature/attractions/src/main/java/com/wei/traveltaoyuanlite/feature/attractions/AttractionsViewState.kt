@@ -1,4 +1,4 @@
-package com.wei.traveltaoyanlite.feature.attractions
+package com.wei.traveltaoyuanlite.feature.attractions
 
 import com.wei.traveltaoyuanlite.core.AppLocale
 import com.wei.traveltaoyuanlite.core.base.Action

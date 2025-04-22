@@ -1,4 +1,4 @@
-package com.wei.traveltaoyanlite.feature.attractions
+package com.wei.traveltaoyuanlite.feature.attractions
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,13 +32,12 @@ import androidx.navigation.NavController
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.wei.traveltaoyanlite.feature.attractions.ui.AttractionsGrid
-import com.wei.traveltaoyanlite.feature.attractions.ui.AttractionsTopBar
 import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
 import com.wei.traveltaoyuanlite.core.designsystem.component.FunctionalityNotAvailablePopup
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_SMALL
-import com.wei.traveltaoyuanlite.feature.attractions.R
+import com.wei.traveltaoyuanlite.feature.attractions.ui.AttractionsGrid
+import com.wei.traveltaoyuanlite.feature.attractions.ui.AttractionsTopBar
 
 /**
  *

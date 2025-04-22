@@ -6,10 +6,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.window.layout.DisplayFeature
-import com.wei.traveltaoyanlite.feature.attractiondetail.navigation.attractionDetailGraph
-import com.wei.traveltaoyanlite.feature.attractiondetail.navigation.navigateToAttractionDetail
-import com.wei.traveltaoyanlite.feature.attractions.navigation.attractionsGraph
 import com.wei.traveltaoyuanlite.core.designsystem.ui.DeviceOrientation
+import com.wei.traveltaoyuanlite.feature.attractiondetail.navigation.attractionDetailGraph
+import com.wei.traveltaoyuanlite.feature.attractiondetail.navigation.navigateToAttractionDetail
+import com.wei.traveltaoyuanlite.feature.attractions.navigation.attractionsGraph
 import com.wei.traveltaoyuanlite.feature.home.navigation.HOME_ROUTE
 import com.wei.traveltaoyuanlite.feature.home.navigation.homeGraph
 import com.wei.traveltaoyuanlite.feature.news.navigation.newsScreen

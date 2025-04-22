@@ -4,9 +4,17 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBackIos
 import androidx.compose.material.icons.automirrored.rounded.ArrowForwardIos
 import androidx.compose.material.icons.outlined.BookmarkBorder
+import androidx.compose.material.icons.outlined.ConfirmationNumber
 import androidx.compose.material.icons.outlined.FilterList
 import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Landscape
+import androidx.compose.material.icons.outlined.LocationOn
+import androidx.compose.material.icons.outlined.Map
+import androidx.compose.material.icons.outlined.Phone
+import androidx.compose.material.icons.outlined.Schedule
 import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material.icons.outlined.TravelExplore
 import androidx.compose.material.icons.outlined.Upcoming
 import androidx.compose.material.icons.rounded.Add
@@ -38,4 +46,12 @@ object TtlIcons {
     val Language = Icons.Rounded.Language
     val FilterList = Icons.Outlined.FilterList
     val Bookmark = Icons.Outlined.BookmarkBorder
+    val Share = Icons.Outlined.Share
+    val Map = Icons.Outlined.Map
+    val Landscape = Icons.Outlined.Landscape
+    val Location = Icons.Outlined.LocationOn
+    val Schedule = Icons.Outlined.Schedule
+    val Phone = Icons.Outlined.Phone
+    val Ticket = Icons.Outlined.ConfirmationNumber
+    val Info = Icons.Outlined.Info
 }
