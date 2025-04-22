@@ -26,6 +26,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.wei.traveltaoyuanlite.core.AppLocale
+import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
 import com.wei.traveltaoyuanlite.core.designsystem.component.FunctionalityNotAvailablePopup
 import com.wei.traveltaoyuanlite.core.designsystem.component.ThemePreviews
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
@@ -72,6 +73,7 @@ internal fun HomeRoute(
     widthSizeClass: WindowWidthSizeClass,
     navigateToWebView: (String, String) -> Unit,
     navigateToAttractions: () -> Unit,
+    navigateToAttractionDetail: (AttractionDetailNavArgs) -> Unit,
     onLanguageSwitched: () -> Unit,
 ) {
     val uiStates: HomeViewState by viewModel.states.collectAsStateWithLifecycle()
@@ -94,6 +96,7 @@ internal fun HomeRoute(
             navController.navigateToNews()
         },
         navigateToAttractions = navigateToAttractions,
+        navigateToAttractionDetail = navigateToAttractionDetail,
     )
 }
 
@@ -107,6 +110,7 @@ internal fun HomeScreen(
     navigateToWebView: (String, String) -> Unit,
     navigateToNews: () -> Unit,
     navigateToAttractions: () -> Unit,
+    navigateToAttractionDetail: (AttractionDetailNavArgs) -> Unit,
     isPreview: Boolean = false,
 ) {
     val showPopup = remember { mutableStateOf(false) }
@@ -198,6 +202,7 @@ internal fun HomeScreen(
                         attractionsList = uiStates.attractionsUiStateList,
                         widthSizeClass = widthSizeClass,
                         onViewAllClick = navigateToAttractions,
+                        navigateToAttractionDetail = navigateToAttractionDetail,
                     )
                 }
             }
@@ -224,6 +229,7 @@ fun HomeScreenPreview() {
             navigateToWebView = { _, _ -> },
             navigateToNews = {},
             navigateToAttractions = {},
+            navigateToAttractionDetail = {},
             isPreview = true,
         )
     }

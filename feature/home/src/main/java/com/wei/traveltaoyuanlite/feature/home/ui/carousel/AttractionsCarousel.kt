@@ -2,6 +2,7 @@ package com.wei.traveltaoyuanlite.feature.home.ui.carousel
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -26,17 +27,18 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
+import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
 import com.wei.traveltaoyuanlite.core.designsystem.component.coilImagePainter
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_SMALL
-import com.wei.traveltaoyuanlite.feature.home.AttractionUiState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AttractionsCarousel(
     modifier: Modifier = Modifier,
-    attractionsList: List<AttractionUiState>,
+    attractionsList: List<AttractionDetailNavArgs>,
     widthSizeClass: WindowWidthSizeClass,
+    navigateToAttractionDetail: (AttractionDetailNavArgs) -> Unit,
 ) {
     if (attractionsList.isEmpty()) return
 
@@ -51,9 +53,14 @@ fun AttractionsCarousel(
             .fillMaxWidth()
             .height(221.dp),
     ) { index ->
+        val attraction = attractionsList[index]
         AttractionCard(
-            attraction = attractionsList[index],
-            modifier = Modifier.width(cardWidth),
+            attraction = attraction,
+            modifier = Modifier
+                .width(cardWidth)
+                .clickable(
+                    onClick = { navigateToAttractionDetail(attraction) },
+                ),
         )
     }
 }
@@ -61,10 +68,11 @@ fun AttractionsCarousel(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun CarouselItemScope.AttractionCard(
-    attraction: AttractionUiState,
+    attraction: AttractionDetailNavArgs,
     modifier: Modifier = Modifier,
 ) {
-    val painterState = coilImagePainter(attraction.imageUrl)
+    if (attraction.images.isEmpty()) return
+    val painterState = coilImagePainter(attraction.images[0])
     val expansionFraction = (
         (carouselItemDrawInfo.size - carouselItemDrawInfo.minSize) /
             (carouselItemDrawInfo.maxSize - carouselItemDrawInfo.minSize).coerceAtLeast(1f)

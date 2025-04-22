@@ -1,10 +1,12 @@
-package com.wei.traveltaoyanlite.feature.attractions
+package com.wei.traveltaoyuanlite.feature.attractions
 
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.map
 import com.wei.traveltaoyuanlite.core.base.BaseViewModel
+import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
+import com.wei.traveltaoyuanlite.core.data.navigation.toAttractionUiState
 import com.wei.traveltaoyuanlite.core.data.repository.SettingsRepository
 import com.wei.traveltaoyuanlite.core.data.repository.TravelRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -24,7 +26,7 @@ class AttractionsViewModel @Inject constructor(
     AttractionsViewState,
     >(AttractionsViewState()) {
 
-    val pagingAttractionsFlow: StateFlow<PagingData<AttractionUiState>> =
+    val pagingAttractionsFlow: StateFlow<PagingData<AttractionDetailNavArgs>> =
         settingsRepository.languageFlow
             .flatMapLatest { lang ->
                 travelRepository.getPagingTravelAttractions(lang = lang.apiArg)

@@ -3,8 +3,8 @@ package com.wei.traveltaoyuanlite.feature.home
 import com.wei.traveltaoyuanlite.core.AppLocale
 import com.wei.traveltaoyuanlite.core.base.Action
 import com.wei.traveltaoyuanlite.core.base.State
+import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
 import com.wei.traveltaoyuanlite.core.model.data.EventNews
-import com.wei.traveltaoyuanlite.core.model.data.TravelAttraction
 
 sealed class HomeViewAction : Action {
     data class SwitchLanguage(val appLocale: AppLocale) : HomeViewAction()
@@ -15,7 +15,7 @@ data class HomeViewState(
     val newsLoadingState: NewsLoadingState = NewsLoadingState.Idle,
     val attractionsLoadingState: AttractionsLoadingState = AttractionsLoadingState.Idle,
     val newsUiStateList: List<NewsUiState> = emptyList(),
-    val attractionsUiStateList: List<AttractionUiState> = emptyList(),
+    val attractionsUiStateList: List<AttractionDetailNavArgs> = emptyList(),
     val isLanguageSwitched: Boolean = false,
 ) : State {
     val loadingFinish: Boolean
@@ -49,11 +49,6 @@ data class NewsUiState(
     val imageUrl: String = "",
 )
 
-data class AttractionUiState(
-    val name: String,
-    val imageUrl: String,
-)
-
 fun EventNews.toNewsUiState(): NewsUiState {
     val postedFormatted =
         posted.takeIf { it.isNotBlank() }?.split(" ")?.firstOrNull() ?: "yyyy/MM/dd"
@@ -64,12 +59,5 @@ fun EventNews.toNewsUiState(): NewsUiState {
         postedTime = postedFormatted,
         tYWebsiteUrl = tyWebsite,
         imageUrl = if (images.isNotEmpty()) images[0].src else "",
-    )
-}
-
-fun TravelAttraction.toAttractionUiState(): AttractionUiState {
-    return AttractionUiState(
-        name = name,
-        imageUrl = if (images.isNotEmpty()) images.first().src else "",
     )
 }

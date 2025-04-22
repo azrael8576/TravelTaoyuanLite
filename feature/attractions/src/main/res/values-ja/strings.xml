@@ -7,4 +7,6 @@
     <string name="feature_attractions_bookmark">ブックマーク</string>
     <string name="feature_attractions_filter">フィルター</string>
     <string name="feature_attractions_select_destination">目的地を選択</string>
+    <string name="feature_attractions_share">共有</string>
+    <string name="feature_attractions_map">地図</string>
 </resources>

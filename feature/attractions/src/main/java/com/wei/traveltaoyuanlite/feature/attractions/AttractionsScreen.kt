@@ -1,4 +1,4 @@
-package com.wei.traveltaoyanlite.feature.attractions
+package com.wei.traveltaoyuanlite.feature.attractions
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,12 +32,12 @@ import androidx.navigation.NavController
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.wei.traveltaoyanlite.feature.attractions.ui.AttractionsGrid
-import com.wei.traveltaoyanlite.feature.attractions.ui.AttractionsTopBar
+import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
 import com.wei.traveltaoyuanlite.core.designsystem.component.FunctionalityNotAvailablePopup
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_SMALL
-import com.wei.traveltaoyuanlite.feature.attractions.R
+import com.wei.traveltaoyuanlite.feature.attractions.ui.AttractionsGrid
+import com.wei.traveltaoyuanlite.feature.attractions.ui.AttractionsTopBar
 
 /**
  *
@@ -72,10 +72,12 @@ import com.wei.traveltaoyuanlite.feature.attractions.R
 internal fun AttractionsRoute(
     navController: NavController,
     viewModel: AttractionsViewModel = hiltViewModel(),
+    navigateToAttractionDetail: (AttractionDetailNavArgs) -> Unit,
 ) {
     val lazyPagingItems = viewModel.pagingAttractionsFlow.collectAsLazyPagingItems()
     AttractionsScreen(
         lazyPagingItems = lazyPagingItems,
+        navigateToAttractionDetail = navigateToAttractionDetail,
     )
 }
 
@@ -83,7 +85,8 @@ internal fun AttractionsRoute(
 internal fun AttractionsScreen(
     withTopSpacer: Boolean = true,
     withBottomSpacer: Boolean = true,
-    lazyPagingItems: LazyPagingItems<AttractionUiState>,
+    lazyPagingItems: LazyPagingItems<AttractionDetailNavArgs>,
+    navigateToAttractionDetail: (AttractionDetailNavArgs) -> Unit,
 ) {
     val showPopup = remember { mutableStateOf(false) }
 
@@ -110,7 +113,7 @@ internal fun AttractionsScreen(
                     .weight(1f)
                     .padding(top = SPACING_LARGE.dp),
                 lazyPagingItems = lazyPagingItems,
-                onAttractionCardClick = { showPopup.value = true },
+                navigateToAttractionDetail = navigateToAttractionDetail,
                 onBookmarkClick = { showPopup.value = true },
             )
             PagingStateHandling(lazyPagingItems)
@@ -122,7 +125,7 @@ internal fun AttractionsScreen(
 }
 
 @Composable
-fun PagingStateHandling(lazyPagingItems: LazyPagingItems<AttractionUiState>) {
+fun PagingStateHandling(lazyPagingItems: LazyPagingItems<AttractionDetailNavArgs>) {
     lazyPagingItems.apply {
         when {
             loadState.refresh is LoadState.Loading -> PageLoader()

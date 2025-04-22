@@ -1,10 +1,11 @@
-package com.wei.traveltaoyanlite.feature.attractions.navigation
+package com.wei.traveltaoyuanlite.feature.attractions.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import com.wei.traveltaoyanlite.feature.attractions.AttractionsRoute
+import com.wei.traveltaoyuanlite.feature.attractiondetail.navigation.navigateToAttractionDetail
+import com.wei.traveltaoyuanlite.feature.attractions.AttractionsRoute
 
 const val ATTRACTIONS_ROUTE = "attractions_route"
 
@@ -18,6 +19,9 @@ fun NavGraphBuilder.attractionsGraph(
     composable(route = ATTRACTIONS_ROUTE) {
         AttractionsRoute(
             navController = navController,
+            navigateToAttractionDetail = { args ->
+                navController.navigateToAttractionDetail(args = args)
+            },
         )
     }
 }

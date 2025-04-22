@@ -24,21 +24,22 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
 import com.wei.traveltaoyuanlite.core.designsystem.component.ThemePreviews
 import com.wei.traveltaoyuanlite.core.designsystem.icon.TtlIcons
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_SMALL
 import com.wei.traveltaoyuanlite.core.designsystem.theme.TtlTheme
-import com.wei.traveltaoyuanlite.feature.home.AttractionUiState
 import com.wei.traveltaoyuanlite.feature.home.R
 import com.wei.traveltaoyuanlite.feature.home.ui.carousel.AttractionsCarousel
 
 @Composable
 fun AttractionsColumn(
     modifier: Modifier = Modifier,
-    attractionsList: List<AttractionUiState>,
+    attractionsList: List<AttractionDetailNavArgs>,
     widthSizeClass: WindowWidthSizeClass = WindowWidthSizeClass.Compact,
     onViewAllClick: () -> Unit,
+    navigateToAttractionDetail: (AttractionDetailNavArgs) -> Unit,
 ) {
     Column(modifier = modifier) {
         AttractionsColumnTitle(onViewAllClick = onViewAllClick)
@@ -47,6 +48,7 @@ fun AttractionsColumn(
             AttractionsCarousel(
                 attractionsList = attractionsList,
                 widthSizeClass = widthSizeClass,
+                navigateToAttractionDetail = navigateToAttractionDetail,
             )
         }
     }
@@ -114,34 +116,30 @@ fun AttractionsColumnPreview() {
                 attractionsList = fakeAttractionsList,
                 widthSizeClass = WindowWidthSizeClass.Compact,
                 onViewAllClick = {},
+                navigateToAttractionDetail = { },
             )
         }
     }
 }
 
-val fakeAttractionsList = listOf(
-    AttractionUiState(
-        name = "title1",
-        imageUrl = "",
-    ),
-    AttractionUiState(
-        name = "title2",
-        imageUrl = "",
-    ),
-    AttractionUiState(
-        name = "title3",
-        imageUrl = "",
-    ),
-    AttractionUiState(
-        name = "title4",
-        imageUrl = "",
-    ),
-    AttractionUiState(
-        name = "title5",
-        imageUrl = "",
-    ),
-    AttractionUiState(
-        name = "title6",
-        imageUrl = "",
-    ),
-)
+val sampleNames = listOf("天空步道", "大溪老街", "慈湖", "石門水庫", "小烏來")
+
+val fakeAttractionsList = (1..5).map { i ->
+    AttractionDetailNavArgs(
+        id = i.toString(),
+        tyWebsite = "",
+        classes = listOf("自然生態", "文化古蹟"),
+        name = sampleNames.getOrNull(i - 1) ?: "景點$i",
+        description = "這是第 $i 號景點的描述",
+        district = "區域$i",
+        address = "地址$i",
+        phone = "(02) 0000-000$i",
+        openTime = "08:00–17:00",
+        ticket = "NT\$${50 + i * 10}",
+        remind = "參觀提醒$i",
+        parking = "停車場$i",
+        facilities = listOf("廁所", "停車場"),
+        images = listOf(),
+        links = listOf(),
+    )
+}

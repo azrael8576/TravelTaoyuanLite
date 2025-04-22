@@ -7,4 +7,6 @@
     <string name="feature_attractions_bookmark">书签</string>
     <string name="feature_attractions_filter">筛选</string>
     <string name="feature_attractions_select_destination">选择目的地</string>
+    <string name="feature_attractions_share">分享</string>
+    <string name="feature_attractions_map">地图</string>
 </resources>
