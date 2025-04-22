@@ -84,6 +84,14 @@ fun TtlNavHost(
         attractionsGraph(
             navController = navController,
         )
-        attractionDetailGraph(navController)
+        attractionDetailGraph(
+            navController = navController,
+            navigateToWebView = { url, topBarTitle ->
+                navController.navigateToWebView(
+                    url = url,
+                    topBarTitle = topBarTitle,
+                )
+            },
+        )
     }
 }

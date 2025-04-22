@@ -9,4 +9,5 @@
     <string name="feature_attractions_select_destination">Select destination</string>
     <string name="feature_attractions_share">Share</string>
     <string name="feature_attractions_map">Map</string>
+    <string name="feature_attractions_official_website">Official Website</string>
 </resources>

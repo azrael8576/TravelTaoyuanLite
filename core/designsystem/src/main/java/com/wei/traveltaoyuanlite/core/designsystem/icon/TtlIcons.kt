@@ -12,6 +12,7 @@ import androidx.compose.material.icons.outlined.Landscape
 import androidx.compose.material.icons.outlined.LocationOn
 import androidx.compose.material.icons.outlined.Map
 import androidx.compose.material.icons.outlined.Phone
+import androidx.compose.material.icons.outlined.Public
 import androidx.compose.material.icons.outlined.Schedule
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Share
@@ -54,4 +55,5 @@ object TtlIcons {
     val Phone = Icons.Outlined.Phone
     val Ticket = Icons.Outlined.ConfirmationNumber
     val Info = Icons.Outlined.Info
+    val Public = Icons.Outlined.Public
 }
