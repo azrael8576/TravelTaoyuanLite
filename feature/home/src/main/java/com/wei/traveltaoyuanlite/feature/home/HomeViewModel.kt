@@ -124,6 +124,9 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             delay(LANGUAGE_SWITCH_DELAY)
             settingsRepository.setLanguage(appLocale.code)
+            updateState {
+                copy(isLanguageSwitched = true)
+            }
         }
     }
 
