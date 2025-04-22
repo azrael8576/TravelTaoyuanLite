@@ -35,4 +35,8 @@ dependencies {
     implementation(libs.retrofit.core)
     // RetrofitKotlinxSerializationJson
     implementation(libs.retrofit.kotlin.serialization)
+
+    testImplementation(projects.core.testing)
+
+    androidTestImplementation(projects.core.testing)
 }

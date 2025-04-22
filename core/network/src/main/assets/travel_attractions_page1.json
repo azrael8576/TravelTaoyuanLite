@@ -1,0 +1,1174 @@
+{
+  "Infos": {
+    "Declaration": {
+      "Orgname": "380300000H",
+      "SiteName": "桃園觀光導覽網",
+      "Total": "304",
+      "Official-WebSite": "https://travel.tycg.gov.tw",
+      "Updated": "2025/04/23 04:14:16"
+    },
+    "Info": [
+      {
+        "Id": "583",
+        "TYWebsite": "travel.tycg.gov.tw/zh-tw/travel/attraction/583",
+        "Classes": {
+          "Class": [
+            "北橫原鄉",
+            "自然生態",
+            "市級風景區"
+          ]
+        },
+        "Name": "小烏來天空步道",
+        "Description": "凌空漫步70公尺高透明廊道，嘩啦啦溪水、超廣角視野，叫人腳趾都發麻！完成挑戰後，還有50公噸風動石定格秀，讓旅程驚嘆再一波。",
+        "Zipcode": "336",
+        "District": "復興區",
+        "Address": "義盛里下宇內1鄰4-6號",
+        "East-Longitude": "121.37519",
+        "North-Latitude": "24.79064",
+        "Phone": "886-3-3821835",
+        "Fax": "886-3-3322101",
+        "Email": "",
+        "Open-Time": "08:00 ~ 12:00／13:00 ~ 17:00（週二公休）",
+        "Ticket": "全票50元、優待票30元、團體票40元(40人以上團體)、老人（年滿65歲以上）免費",
+        "Remind": "■團體(20人以上)線上申請時間為早上9時起至晚上24時止。■水域區每年6月及9月每逢星期六、日(含國定假日)開放，7月及8月配合暑假全月開放(週二休園日不開放)。■入園方式敬請旅客詳閱參觀須知(https://skywalk.tycg.gov.tw/Page/declare.aspx)",
+        "Parking": "停車空間約40格。",
+        "Facilities": {
+          "Facility": [
+            "觀景台",
+            "公車站",
+            "廁所",
+            "停車場",
+            "步道"
+          ]
+        },
+        "Images": {
+          "Image": [
+            {
+              "Src": "https://travel.tycg.gov.tw/image/100593/640x480",
+              "Subject": "被颱風吹倒的風動石",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/100594/640x480",
+              "Subject": "遊客居高臨下欣賞小烏來溪谷",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/100595/640x480",
+              "Subject": "步道凌空伸出11公尺的廊道",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/100596/640x480",
+              "Subject": "步道底部為強化玻璃的建築結構",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/100597/640x480",
+              "Subject": "步道距離瀑布底70公尺高的玻璃平台",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/100598/640x480",
+              "Subject": "屹立不搖的風動石",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/100599/640x480",
+              "Subject": "壯觀的小烏來瀑布",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/100600/640x480",
+              "Subject": "在天空步道上可挑戰視覺上的極限",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/100601/640x480",
+              "Subject": "氣勢磅礡的瀑布景觀",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/100622/640x480",
+              "Subject": "遊客體驗漫步雲端的新奇感",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/100623/640x480",
+              "Subject": "瀑布景色極為壯觀",
+              "Ext": ".jpg"
+            }
+          ]
+        },
+        "Links": {
+          "Link": {
+            "Src": "https://skywalk.tycg.gov.tw/index.aspx?openExternalBrowser=1",
+            "Subject": "官方網站"
+          }
+        },
+        "Posted": "2011/06/28 10:36:54",
+        "Modified": "2024/06/19 16:27:52"
+      },
+      {
+        "Id": "414",
+        "TYWebsite": "travel.tycg.gov.tw/zh-tw/travel/attraction/414",
+        "Classes": {
+          "Class": [
+            "大溪總統鎮",
+            "歷史人文"
+          ]
+        },
+        "Name": "大溪老街",
+        "Description": "玩味巴洛克建築語彙、來老商行體驗傳統木藝、古廟參拜關聖帝君、品味老字號豆干…，要認識大溪老城區文化，就從百年街屋開始。",
+        "Zipcode": "335",
+        "District": "大溪區",
+        "Address": "和平路、中山路",
+        "East-Longitude": "121.28867",
+        "North-Latitude": "24.8847",
+        "Phone": "886-3-3882201",
+        "Fax": "886-3-3322101",
+        "Email": "",
+        "Open-Time": "全年無休",
+        "Ticket": "免費",
+        "Remind": "■導覽服務相關細節可參考照片圖卡",
+        "Parking": "離大溪老街最近的停車場，有月眉以及橋頭停車場。",
+        "Facilities": {
+          "Facility": [
+            "公車站",
+            "廁所",
+            "停車場",
+            "販賣部",
+            "單車驛站"
+          ]
+        },
+        "Images": {
+          "Image": [
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6605/640x480",
+              "Subject": "渡船頭",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/34277/640x480",
+              "Subject": "大溪老街",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/77177/640x480",
+              "Subject": "IMG_4470",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/89622/640x480",
+              "Subject": "大溪老街巴洛克建築風格",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/89646/640x480",
+              "Subject": "大溪老街",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/89647/640x480",
+              "Subject": "大溪老街",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/89648/640x480",
+              "Subject": "大溪老街",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/89691/640x480",
+              "Subject": "老街拱門廊道",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/89711/640x480",
+              "Subject": "大溪老街各商號融合巴洛克式繁飾主義和閩南傳統裝飾圖案",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/89731/640x480",
+              "Subject": "大溪老街",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/89732/640x480",
+              "Subject": "大溪老街",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/89733/640x480",
+              "Subject": "大溪老街",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/102105/640x480",
+              "Subject": "導覽資訊 (2)",
+              "Ext": ".png"
+            }
+          ]
+        },
+        "Links": null,
+        "Posted": "2008/10/23 09:31:45",
+        "Modified": "2024/06/19 16:27:52"
+      },
+      {
+        "Id": "351",
+        "TYWebsite": "travel.tycg.gov.tw/zh-tw/travel/attraction/351",
+        "Classes": {
+          "Class": [
+            "石門秘境",
+            "自然生態"
+          ]
+        },
+        "Name": "石門水庫",
+        "Description": "早期以吃活魚聞名的石門水庫，近來增加了不少新穎旅遊熱門旅遊方是，老景點新玩法，等你一一來發掘。",
+        "Zipcode": "335",
+        "District": "大溪區",
+        "Address": "復興里環湖路一段68號",
+        "East-Longitude": "121.24762",
+        "North-Latitude": "24.81154",
+        "Phone": "886-3-4712000#101",
+        "Fax": "886-3-4712981",
+        "Email": "",
+        "Open-Time": "每日 08:00 - 18:00",
+        "Ticket": "■大型車：400元、小型車/大型重型機車：120元、小型普通輕型機車及普通重型機車：50元■收費時段為每日08:00起至18:00。(入園停留時間如跨收費時段一律計費)■如舉辦夜間活動，收費時段可另訂之。",
+        "Remind": "賞楓：每年11-12月，可於高線公路、槭樹公園、楓林步道賞楓。賞櫻：每年2-3月，可於溪州公園、北水局、石門大圳賞櫻。流蘇花季：每年3-4月，在石門水庫大草坪。",
+        "Parking": "1. 設有石門水庫碼頭停車場、阿姆坪停車場等。2. 大型車停車格160格，小客車停車格683格。",
+        "Facilities": {
+          "Facility": [
+            "遊客中心",
+            "解說簡報",
+            "觀景台",
+            "公車站",
+            "廁所",
+            "停車場",
+            "販賣部",
+            "警察隊",
+            "步道"
+          ]
+        },
+        "Images": {
+          "Image": [
+            {
+              "Src": "https://travel.tycg.gov.tw/image/3954/640x480",
+              "Subject": "湖光山色，風景秀麗",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/3955/640x480",
+              "Subject": "石門水庫河谷地形",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6560/640x480",
+              "Subject": "搭乘遊艇環湖是不錯之選",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6729/640x480",
+              "Subject": "石門水庫遊客中心-環翠樓",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6730/640x480",
+              "Subject": "碧綠潭水",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6731/640x480",
+              "Subject": "石門水庫地標-石門勝景",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6844/640x480",
+              "Subject": "石門水庫台灣北部的重要水庫之一",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/34281/640x480",
+              "Subject": "石門水庫",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/78955/640x480",
+              "Subject": "石門水庫壩頂‧搭船遊水庫",
+              "Ext": ".jpg"
+            }
+          ]
+        },
+        "Links": {
+          "Link": {
+            "Src": "https://web.wra.gov.tw/shihmen/Default.aspx",
+            "Subject": "官方網站"
+          }
+        },
+        "Posted": "2008/10/22 11:51:09",
+        "Modified": "2024/06/19 16:27:52"
+      },
+      {
+        "Id": "188",
+        "TYWebsite": "travel.tycg.gov.tw/zh-tw/travel/attraction/188",
+        "Classes": {
+          "Class": "濱海追風"
+        },
+        "Name": "竹圍漁港",
+        "Description": "幾乎沒有人能抵擋新鮮海鮮的美味逆襲，跟港口賞夕陽、看飛機同樣需列入行程清單的逛漁市，讓荷包君不必哭泣就能滿足吃貨的胃。",
+        "Zipcode": "337",
+        "District": "大園區",
+        "Address": "沙崙里1鄰漁港路451巷25號",
+        "East-Longitude": "121.24416",
+        "North-Latitude": "25.11686",
+        "Phone": "886-3-3832308",
+        "Fax": "886-3-3830150",
+        "Email": "",
+        "Open-Time": "港口全天開放，漁貨買賣約08:00~18:00",
+        "Ticket": "免費",
+        "Remind": "桃園區漁會聯絡電話03-3835601、03-3830993~4",
+        "Parking": "備有停車場。",
+        "Facilities": {
+          "Facility": [
+            "觀景台",
+            "廁所",
+            "停車場",
+            "販賣部"
+          ]
+        },
+        "Images": {
+          "Image": [
+            {
+              "Src": "https://travel.tycg.gov.tw/image/4031/640x480",
+              "Subject": "海產街",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/4033/640x480",
+              "Subject": "漁港風情",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6545/640x480",
+              "Subject": "漁港停泊的船隻",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6546/640x480",
+              "Subject": "遠眺彩虹橋",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6547/640x480",
+              "Subject": "漁港鳥瞰",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6873/640x480",
+              "Subject": "竹圍漁港賞飛機起降",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70806/640x480",
+              "Subject": "竹圍漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70807/640x480",
+              "Subject": "竹圍漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70808/640x480",
+              "Subject": "竹圍漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70809/640x480",
+              "Subject": "竹圍漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70810/640x480",
+              "Subject": "竹圍漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70811/640x480",
+              "Subject": "竹圍漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70812/640x480",
+              "Subject": "竹圍漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70813/640x480",
+              "Subject": "竹圍漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70814/640x480",
+              "Subject": "竹圍漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/74205/640x480",
+              "Subject": "447678",
+              "Ext": ".jpg"
+            }
+          ]
+        },
+        "Links": null,
+        "Posted": "2008/10/20 11:19:30",
+        "Modified": "2024/06/19 16:27:52"
+      },
+      {
+        "Id": "1002",
+        "TYWebsite": "travel.tycg.gov.tw/zh-tw/travel/attraction/1002",
+        "Classes": {
+          "Class": [
+            "自然生態",
+            "休閒健走"
+          ]
+        },
+        "Name": "三坑自然生態公園",
+        "Description": "翠綠山色倒映在湖心，步上木棧道靜賞這片如詩風景，心也跟著悠然，途中想歇息，園裡的涼亭和遼闊草坪都是推薦的舒心去處。",
+        "Zipcode": "325",
+        "District": "龍潭區",
+        "Address": "三坑里堤防旁",
+        "East-Longitude": "121.25738",
+        "North-Latitude": "24.83895",
+        "Phone": "886-3-4793070",
+        "Fax": "886-3-3322101",
+        "Email": "",
+        "Open-Time": "全年無休",
+        "Ticket": "免費",
+        "Remind": "相關資訊可洽管理單位：桃園市龍潭區公所03-4793070#2216",
+        "Parking": "園內備有停車場。",
+        "Facilities": {
+          "Facility": [
+            "觀景台",
+            "廁所",
+            "停車場",
+            "單車驛站",
+            "步道"
+          ]
+        },
+        "Images": {
+          "Image": [
+            {
+              "Src": "https://travel.tycg.gov.tw/image/10729/640x480",
+              "Subject": "公園木棧步道",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/10730/640x480",
+              "Subject": "公園步道",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/10732/640x480",
+              "Subject": "涼亭與景觀橋融入自然",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/10733/640x480",
+              "Subject": "湖光山色",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/10734/640x480",
+              "Subject": "木拱橋",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70447/640x480",
+              "Subject": "三坑自然生態公園 (2)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70448/640x480",
+              "Subject": "三坑自然生態公園 (1)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70449/640x480",
+              "Subject": "三坑自然生態公園 (11)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70450/640x480",
+              "Subject": "三坑自然生態公園 (9)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70451/640x480",
+              "Subject": "三坑自然生態公園 (5)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70452/640x480",
+              "Subject": "三坑自然生態公園 (10)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/70453/640x480",
+              "Subject": "三坑自然生態公園 (7)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/105300/640x480",
+              "Subject": "三坑自然生態公園",
+              "Ext": ".jpg"
+            }
+          ]
+        },
+        "Links": null,
+        "Posted": "2015/11/17 16:34:08",
+        "Modified": "2024/12/25 14:24:41"
+      },
+      {
+        "Id": "63",
+        "TYWebsite": "travel.tycg.gov.tw/zh-tw/travel/attraction/63",
+        "Classes": {
+          "Class": [
+            "北橫原鄉",
+            "自然生態"
+          ]
+        },
+        "Name": "拉拉山巨木區(森林遊樂區)",
+        "Description": "行走木棧步道的旅人，來和這座森林的守護者一起吸收大地日月精華，感受千年如一刻的雋永古韻﹔昇起的感動就如芬多精，洗滌身心。",
+        "Zipcode": "336",
+        "District": "復興區",
+        "Address": "華陵里11鄰205號",
+        "East-Longitude": "121.43678",
+        "North-Latitude": "24.70992",
+        "Phone": "886-3-3912142",
+        "Fax": "886-3-3322101",
+        "Email": "",
+        "Open-Time": "￭每日06:00~17:00",
+        "Ticket": "￭全票150元￭半票75元￭65歲以上長者與3歲至6歲兒童及小學生非假日戶外教學，享有10元優惠票(詳細資訊請至官網查詢)",
+        "Remind": "￭區內禁止露營炊食￭禁止犬、貓及其他哺乳類動物進入園區￭步道全程約為3.3公里",
+        "Parking": "備有停車場。",
+        "Facilities": {
+          "Facility": [
+            "遊客中心",
+            "解說簡報",
+            "觀景台",
+            "廁所",
+            "停車場",
+            "步道"
+          ]
+        },
+        "Images": {
+          "Image": [
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6646/640x480",
+              "Subject": "景觀步道",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6648/640x480",
+              "Subject": "拉拉山自然保護區參天古木",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/67915/640x480",
+              "Subject": "旅人循著巨木群環狀步道而行",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/67916/640x480",
+              "Subject": "巨木樹圍達數十公尺",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/67917/640x480",
+              "Subject": "步道路面平緩",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/67918/640x480",
+              "Subject": "在陡坡奮力拔地而起的樹根",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/67919/640x480",
+              "Subject": "步道沿途林蔭蓊鬱",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/67921/640x480",
+              "Subject": "巨木旁有休憩空地",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/67923/640x480",
+              "Subject": "步道可近距離觀賞巨木",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/101006/640x480",
+              "Subject": "遊客中心內部",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/101007/640x480",
+              "Subject": "觀景平台可遠眺青山",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/101008/640x480",
+              "Subject": "用餐區",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/104871/640x480",
+              "Subject": "拉拉山國家森林遊樂區",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/104872/640x480",
+              "Subject": "拉拉山國家森林遊樂區路標",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/104873/640x480",
+              "Subject": "拉拉山國家森林遊樂區巨木",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/104874/640x480",
+              "Subject": "拉拉山國家森林遊樂區-好漢低頭",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/104875/640x480",
+              "Subject": "拉拉山國家森林遊樂區內小瀑布",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/104876/640x480",
+              "Subject": "拉拉山國家森林遊樂區巨木與步道",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/104877/640x480",
+              "Subject": "拉拉山國家森林遊樂區路線圖",
+              "Ext": ".jpg"
+            }
+          ]
+        },
+        "Links": {
+          "Link": [
+            {
+              "Src": "https://recreation.forest.gov.tw/forest/RA?typ_id=0200005",
+              "Subject": "官方網站"
+            },
+            {
+              "Src": "https://www.facebook.com/LalashanNationalForest?_trms=1ca7c114cacd9532.1681872982456",
+              "Subject": "FB粉絲團"
+            }
+          ]
+        },
+        "Posted": "2008/10/09 15:41:40",
+        "Modified": "2025/04/10 13:37:01"
+      },
+      {
+        "Id": "314",
+        "TYWebsite": "travel.tycg.gov.tw/zh-tw/travel/attraction/314",
+        "Classes": {
+          "Class": "濱海追風"
+        },
+        "Name": "永安漁港",
+        "Description": "總讓旅人念念不忘的濱海夕陽美景，幻彩天光水色一上傳就瘋狂吸讚，同樣是旅程亮點的美味現撈海鮮，吮指鮮甜，一嚐就對味。",
+        "Zipcode": "327",
+        "District": "新屋區",
+        "Address": "永安里中山西路3段1165號",
+        "East-Longitude": "121.01577758789063",
+        "North-Latitude": "24.987730663470352",
+        "Phone": "886-3-4861017",
+        "Fax": "886-3-4861952",
+        "Email": "",
+        "Open-Time": "全年無休",
+        "Ticket": "免費",
+        "Remind": "無",
+        "Parking": "約100格",
+        "Facilities": {
+          "Facility": [
+            "公車站",
+            "廁所",
+            "停車場",
+            "販賣部"
+          ]
+        },
+        "Images": {
+          "Image": [
+            {
+              "Src": "https://travel.tycg.gov.tw/image/3992/640x480",
+              "Subject": "永安漁港每天傍晚五點後即點燈",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/3993/640x480",
+              "Subject": "永安漁港跨港大橋",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6666/640x480",
+              "Subject": "永安觀海橋",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6667/640x480",
+              "Subject": "永安漁港夜景",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6668/640x480",
+              "Subject": "永安漁港鳥瞰",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6669/640x480",
+              "Subject": "璀璨光影照映在海面上非常浪漫",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6670/640x480",
+              "Subject": "觀光漁市",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/69984/640x480",
+              "Subject": "永安漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/69985/640x480",
+              "Subject": "永安漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/69986/640x480",
+              "Subject": "永安漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/69988/640x480",
+              "Subject": "永安漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/69989/640x480",
+              "Subject": "永安漁港",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/72951/640x480",
+              "Subject": "永安漁港漁市",
+              "Ext": ".jpg"
+            }
+          ]
+        },
+        "Links": {
+          "Link": {
+            "Src": "https://www.facebook.com/%E6%B0%B8%E5%AE%89%E6%BC%81%E6%B8%AF-%E4%B8%AD%E5%A3%A2%E5%8D%80%E6%BC%81%E6%9C%83-255671107808923/",
+            "Subject": "FB粉絲團"
+          }
+        },
+        "Posted": "2008/10/22 09:25:08",
+        "Modified": "2024/06/19 16:27:52"
+      },
+      {
+        "Id": "12",
+        "TYWebsite": "travel.tycg.gov.tw/zh-tw/travel/attraction/12",
+        "Classes": {
+          "Class": [
+            "虎頭山",
+            "歷史人文"
+          ]
+        },
+        "Name": "桃園忠烈祠暨神社文化園區",
+        "Description": "請一同參與這場全台獨存的日本神社上演的穿越劇：沿著參道，緩步行經鳥居、手水舍直至本殿，典雅肅穆的唐風建築，帶你走入昭和時代。",
+        "Zipcode": "330",
+        "District": "桃園區",
+        "Address": "成功路三段200號",
+        "East-Longitude": "121.32528",
+        "North-Latitude": "25.00629",
+        "Phone": "886-3-3368877",
+        "Fax": "886-3-3322101",
+        "Email": "",
+        "Open-Time": "■桃園忠烈祠: 週二至週日 09:00-17:00■桃園神社文化園區：週二至週日 09:00-18:00",
+        "Ticket": "免費",
+        "Remind": "■可至官網下載旅遊導覽圖。■開放15人以上團體，於15天前預約申請導覽服務；為維持參觀品質，同一場次同一地點僅受理60人以內團體導覽解說服務，去電本府孔廟忠烈祠聯合管理所(03-3325215)，以安排導覽老師帶領解說。",
+        "Parking": "備有停車場",
+        "Facilities": {
+          "Facility": [
+            "解說簡報",
+            "公車站",
+            "廁所",
+            "停車場"
+          ]
+        },
+        "Images": {
+          "Image": [
+            {
+              "Src": "https://travel.tycg.gov.tw/image/10686/640x480",
+              "Subject": "神社文化園區建物規模完整",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/10690/640x480",
+              "Subject": "桃園忠烈祠暨神社文化園區石階",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/10694/640x480",
+              "Subject": "桃園忠烈祠為日式木造建築",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/80939/640x480",
+              "Subject": "拜殿（圖片來源：桃園市政府孔廟忠烈祠聯合管理所）",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/80941/640x480",
+              "Subject": "銅馬（圖片來源：桃園市政府孔廟忠烈祠聯合管理所）",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/80942/640x480",
+              "Subject": "神社建築頗具特色（圖片來源：桃園市政府孔廟忠烈祠聯合管理所）",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/80943/640x480",
+              "Subject": "本殿（圖片來源：桃園市政府孔廟忠烈祠聯合管理所）",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/80944/640x480",
+              "Subject": "室內天花板的格狀天井",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/80945/640x480",
+              "Subject": "參道（圖片來源：桃園市政府孔廟忠烈祠聯合管理所）",
+              "Ext": ".jpg"
+            }
+          ]
+        },
+        "Links": {
+          "Link": [
+            {
+              "Src": "https://cab.tycg.gov.tw/cp.aspx?n=21311&Create=1",
+              "Subject": "官方網站"
+            },
+            {
+              "Src": "https://www.facebook.com/showa.13",
+              "Subject": "FB粉絲團"
+            }
+          ]
+        },
+        "Posted": "2008/10/08 14:26:24",
+        "Modified": "2025/03/18 17:32:07"
+      },
+      {
+        "Id": "383",
+        "TYWebsite": "travel.tycg.gov.tw/zh-tw/travel/attraction/383",
+        "Classes": {
+          "Class": [
+            "大溪總統鎮",
+            "歷史人文"
+          ]
+        },
+        "Name": "慈湖陵寢（前慈湖）",
+        "Description": "值得等待一小時的不NG三軍儀隊操槍秀，到底有多威﹖超整齊的步伐加上花式拋槍，霸氣全場！內行人必卡位，搶到好位就能捕捉到好畫面。",
+        "Zipcode": "335",
+        "District": "大溪區",
+        "Address": "復興路一段1097號",
+        "East-Longitude": "121.29427",
+        "North-Latitude": "24.84037",
+        "Phone": "886-3-3883552",
+        "Fax": "886-3-3322101",
+        "Email": "",
+        "Open-Time": "09:00-17:00，每週二休園",
+        "Ticket": "免費",
+        "Remind": "￭衛兵交接時間： 9點~ 16點45分(整點交接，最後一場時間為16點45分，遇雨取消)。￭因開園時間為9點，建議欲觀賞衛兵交接的旅客，預留步行入園的時間，觀賞9點後的場次。￭不開放散客謁陵。特定節日(每年1月13日、4月5日及10月31日)團體可預先電話申請謁陵。",
+        "Parking": "大型車19格，小型車216格",
+        "Facilities": {
+          "Facility": [
+            "公車站",
+            "廁所",
+            "停車場",
+            "步道"
+          ]
+        },
+        "Images": {
+          "Image": [
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6555/640x480",
+              "Subject": "慈湖步道",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/6557/640x480",
+              "Subject": "圓環",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/13248/640x480",
+              "Subject": "閩浙混合式建築",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/34287/640x480",
+              "Subject": "慈湖陵寢（前慈湖）",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/101267/640x480",
+              "Subject": "儀隊交班是謁陵必看亮點",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/101280/640x480",
+              "Subject": "每小時換班的花式操槍",
+              "Ext": ".jpg"
+            }
+          ]
+        },
+        "Links": null,
+        "Posted": "2008/10/22 15:43:10",
+        "Modified": "2025/03/05 13:24:16"
+      },
+      {
+        "Id": "1614",
+        "TYWebsite": "travel.tycg.gov.tw/zh-tw/travel/attraction/1614",
+        "Classes": {
+          "Class": [
+            "水岸陂塘",
+            "歷史人文"
+          ]
+        },
+        "Name": "橫山書法藝術館",
+        "Description": "全臺首座由官方經營之書藝主題館，肩負推動書法藝術保存、研究、發展與推廣之使命，並繼而能讓書法藝術在桃園、綻放其饒富文化識別性的藝術能量。",
+        "Zipcode": "337",
+        "District": "大園區",
+        "Address": "大仁路100號",
+        "East-Longitude": "121.21861",
+        "North-Latitude": "25.0206",
+        "Phone": "886-3-2876176",
+        "Fax": "886-3-3322101",
+        "Email": "tmofa.hcac@gmail.com",
+        "Open-Time": "■開館時間：週三至週一，9:30～17:00(最後入館時間16:30)■休館時間：星期二、除夕、初一、初二及其他必要休館日另行公告。■實際開放時間以館方官網為準",
+        "Ticket": "■全票/100元十八歲以上未滿六十五歲之一般民眾■優待票/50元一、本市市民或持有本市市民卡之民眾。二、十八歲以上在校學生及國外學生三、軍警消人員四、教育或文化機構義（志）工■團體票/60元(全票)、30元(優待票)團體人數二十人以上。■免費入場一、未滿十八歲之民眾。二、六十五歲以上民眾。三、身心障礙者及其監護人或必要之陪伴者一人。四、持有本市低收入戶證明者。五、帶團參觀並持有交通部觀光局核發之導遊證者。六、持有國際博物館協會（ICOM）、美國博物館協會（AAM）或中華民國博物館學會會員證者。七、持有「志願服務榮譽卡」之志工。八、本市公私立各級學校或大專校院美術相關科系之戶外教育或學術交流，向桃園市橫山書法藝術館（以下簡稱本館）申請預約並經核准者。九、本市民眾組團十人以上，經由區公所向本館申請預約並經核准者。十、各級政府機關（構）或藝文相關團體舉辦美術相關活動，向本館申請預約並經核准者。十一、於本館佈（卸）展期間、館慶活動、美術節、國際博物館日或其他與美術活動相關之特殊節日，本館得公告免票參觀。",
+        "Remind": "■實際開放時間以館方官網為準■最後入館時間為16:30■請勿飲食、吸菸、嚼食檳榔及口香糖，請勿攜帶飲料或食物進入。■請勿攜帶寵物 (導盲犬除外)。■請勿追逐嬉戲、亂丟垃圾。■大型物品或行李箱請寄放置物櫃。■作品除特殊聲明外，原則上同意在不使用閃光燈及腳架之情況下適度開放拍照。■請勿觸碰及破壞展示品或設施。■本館提供免費娃娃車及輪椅租借服務。",
+        "Parking": "館內停車場僅提供洽公民眾使用。",
+        "Facilities": {
+          "Facility": [
+            "公車站",
+            "廁所",
+            "網路"
+          ]
+        },
+        "Images": {
+          "Image": [
+            {
+              "Src": "https://travel.tycg.gov.tw/image/75470/640x480",
+              "Subject": "橫山書法藝術館-光影交錯 (圖片來源: 桃園市立美術館)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/75471/640x480",
+              "Subject": "橫山書法藝術館-埤塘美景  (圖片來源: 桃園市立美術館)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/75472/640x480",
+              "Subject": "橫山書法藝術館-塘岸窗明  (圖片來源: 桃園市立美術館)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/75473/640x480",
+              "Subject": "橫山書法藝術館-夜色庭燈 (照片拍攝：原間影像/朱逸文)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/75474/640x480",
+              "Subject": "橫山書法藝術館-夜光倒映 (照片拍攝：原間影像/朱逸文)",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/78968/640x480",
+              "Subject": "繞行書藝館前方埤塘，可以不同角度欣賞館區",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/78969/640x480",
+              "Subject": "5棟館群善用內部空間規劃，將戶外空間放到最大。",
+              "Ext": ".jpg"
+            }
+          ]
+        },
+        "Links": {
+          "Link": [
+            {
+              "Src": "https://tmofa.tycg.gov.tw/",
+              "Subject": "官方網站"
+            },
+            {
+              "Src": "https://www.facebook.com/tmofa.hcac",
+              "Subject": "FB粉絲團"
+            }
+          ]
+        },
+        "Posted": "2021/08/13 11:33:24",
+        "Modified": "2025/03/19 08:49:40"
+      },
+      {
+        "Id": "964",
+        "TYWebsite": "travel.tycg.gov.tw/zh-tw/travel/attraction/964",
+        "Classes": {
+          "Class": "歷史人文"
+        },
+        "Name": "馬祖新村眷村文創園區",
+        "Description": "乘載軍眷日常的屋舍，隨著歲月更迭，成了推廣質感生活的創意基地﹔不定期舉辦的市集、名人講座、選物分享，帶你走進諸般好時光。",
+        "Zipcode": "320",
+        "District": "中壢區",
+        "Address": "龍吉二街155號",
+        "East-Longitude": "121.23778939247131",
+        "North-Latitude": "24.935595771995057",
+        "Phone": "886-3-2841866",
+        "Fax": "886-3-3322101",
+        "Email": "",
+        "Open-Time": "￭園區:週二~週日 09:00-18:00￭桃園光影電影館:13:00-21:00 (週一休館)",
+        "Ticket": "免費",
+        "Remind": "￭園區遇國定假日照常開放，翌日休園￭店家營業時間請以各店家官網公告為準",
+        "Parking": "路邊停車",
+        "Facilities": {
+          "Facility": [
+            "遊客中心",
+            "公車站",
+            "廁所",
+            "停車場",
+            "網路",
+            "販賣部"
+          ]
+        },
+        "Images": {
+          "Image": [
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68415/640x480",
+              "Subject": "牆上的小貓",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68416/640x480",
+              "Subject": "園區主入口處",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68417/640x480",
+              "Subject": "眷村書房",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68419/640x480",
+              "Subject": "具有歷史的水井",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68420/640x480",
+              "Subject": "屋舍前的青青草地",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68421/640x480",
+              "Subject": "園區大樹林立",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68422/640x480",
+              "Subject": "園區為桃園知名的文創聚落",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68424/640x480",
+              "Subject": "園區保有原眷村風貌",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68425/640x480",
+              "Subject": "屋舍內展示昔日眷村老物",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68426/640x480",
+              "Subject": "園區內可提供多種手作課程",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68427/640x480",
+              "Subject": "園區內的藝術裝置",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68429/640x480",
+              "Subject": "馬祖新村故事展",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68430/640x480",
+              "Subject": "馬祖新村素有「桃園將軍村」美名",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68431/640x480",
+              "Subject": "親子故事屋",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/68432/640x480",
+              "Subject": "活動平台",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/75194/640x480",
+              "Subject": "488576",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/75195/640x480",
+              "Subject": "488576",
+              "Ext": ".jpg"
+            },
+            {
+              "Src": "https://travel.tycg.gov.tw/image/81916/640x480",
+              "Subject": "〔民宿〕馬村隱園民宿",
+              "Ext": ".jpg"
+            }
+          ]
+        },
+        "Links": {
+          "Link": [
+            {
+              "Src": "https://matsu.tyccc.gov.tw/",
+              "Subject": "官方網站"
+            },
+            {
+              "Src": "https://www.facebook.com/ArtMatsuVillage",
+              "Subject": "FB粉絲團"
+            }
+          ]
+        },
+        "Posted": "2015/02/06 11:50:30",
+        "Modified": "2024/06/19 16:27:52"
+      }
+    ]
+  }
+}

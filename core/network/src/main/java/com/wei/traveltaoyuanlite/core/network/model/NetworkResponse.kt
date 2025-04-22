@@ -17,7 +17,7 @@ data class NetworkInfos<T>(
     val declaration: NetworkDeclaration,
 
     @SerialName("Info")
-    val infoList: List<T>,
+    val infoList: List<T> = emptyList(),
 )
 
 @Serializable
