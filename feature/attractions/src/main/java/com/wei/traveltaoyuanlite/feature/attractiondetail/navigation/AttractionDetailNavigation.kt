@@ -20,6 +20,7 @@ fun NavController.navigateToAttractionDetail(
 
 fun NavGraphBuilder.attractionDetailGraph(
     navController: NavController,
+    navigateToWebView: (String, String) -> Unit,
 ) {
     composable(route = ATTRACTION_DETAIL_ROUTE) {
         // **從前一筆 entry 拿到我們提前存好的 args**
@@ -32,6 +33,7 @@ fun NavGraphBuilder.attractionDetailGraph(
         AttractionDetailRoute(
             navController = navController,
             args = args,
+            navigateToWebView = navigateToWebView,
         )
     }
 }

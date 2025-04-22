@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
 import com.wei.traveltaoyuanlite.core.designsystem.icon.TtlIcons
@@ -26,12 +27,14 @@ import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_LARGE
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_MEDIUM
 import com.wei.traveltaoyuanlite.core.designsystem.theme.SPACING_SMALL
 import com.wei.traveltaoyuanlite.core.designsystem.theme.shapes
+import com.wei.traveltaoyuanlite.feature.attractions.R
 
 @Composable
 fun AttractionDescriptionColumn(
     uiStates: AttractionDetailNavArgs,
     onAddressClick: () -> Unit,
     onPhoneClick: () -> Unit,
+    onWebSiteClick: (String, String) -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -64,6 +67,12 @@ fun AttractionDescriptionColumn(
             icon = TtlIcons.Phone,
             text = uiStates.phone,
             onClick = onPhoneClick,
+        )
+
+        InfoItemCard(
+            icon = TtlIcons.Public,
+            text = stringResource(R.string.feature_attractions_official_website),
+            onClick = { onWebSiteClick(uiStates.tyWebsite, uiStates.name) },
         )
 
         LazyRow(

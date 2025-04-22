@@ -9,4 +9,5 @@
     <string name="feature_attractions_select_destination">目的地を選択</string>
     <string name="feature_attractions_share">共有</string>
     <string name="feature_attractions_map">地図</string>
+    <string name="feature_attractions_official_website">公式サイト</string>
 </resources>

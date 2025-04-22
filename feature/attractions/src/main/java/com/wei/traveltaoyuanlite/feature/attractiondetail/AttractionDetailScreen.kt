@@ -63,6 +63,7 @@ internal fun AttractionDetailRoute(
     navController: NavController,
     viewModel: AttractionDetailViewModel = hiltViewModel(),
     args: AttractionDetailNavArgs,
+    navigateToWebView: (String, String) -> Unit,
 ) {
     LaunchedEffect(args) {
         viewModel.dispatch(AttractionDetailViewAction.Init(args))
@@ -72,6 +73,7 @@ internal fun AttractionDetailRoute(
     AttractionDetailScreen(
         uiStates = uiStates,
         onBackClick = navController::popBackStack,
+        navigateToWebView = navigateToWebView,
     )
 }
 
@@ -81,6 +83,7 @@ internal fun AttractionDetailScreen(
     withBottomSpacer: Boolean = true,
     uiStates: AttractionDetailViewState,
     onBackClick: () -> Unit,
+    navigateToWebView: (String, String) -> Unit,
 ) {
     val showPopup = remember { mutableStateOf(false) }
 
@@ -104,6 +107,7 @@ internal fun AttractionDetailScreen(
                         onBookmarkClick = { showPopup.value = true },
                         onAddressClick = { showPopup.value = true },
                         onPhoneClick = { showPopup.value = true },
+                        onWebSiteClick = navigateToWebView,
                     )
                 }
             }
@@ -130,6 +134,7 @@ private fun AttractionDetailContent(
     onBookmarkClick: () -> Unit,
     onAddressClick: () -> Unit,
     onPhoneClick: () -> Unit,
+    onWebSiteClick: (String, String) -> Unit,
 ) {
     Box {
         if (uiStates.images.isNotEmpty()) {
@@ -147,6 +152,7 @@ private fun AttractionDetailContent(
                 uiStates = uiStates,
                 onAddressClick = onAddressClick,
                 onPhoneClick = onPhoneClick,
+                onWebSiteClick = onWebSiteClick,
             )
         }
     }

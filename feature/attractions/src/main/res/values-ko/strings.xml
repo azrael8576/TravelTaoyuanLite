@@ -9,4 +9,5 @@
     <string name="feature_attractions_select_destination">목적지 선택</string>
     <string name="feature_attractions_share">공유</string>
     <string name="feature_attractions_map">지도</string>
+    <string name="feature_attractions_official_website">공식 웹사이트</string>
 </resources>
