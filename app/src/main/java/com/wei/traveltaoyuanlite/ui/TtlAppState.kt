@@ -1,5 +1,7 @@
 package com.wei.traveltaoyuanlite.ui
 
+import android.content.Context
+import android.content.Intent
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
@@ -19,6 +21,7 @@ import androidx.window.layout.DisplayFeature
 import androidx.window.layout.FoldingFeature
 import com.wei.traveltaoyanlite.feature.attractions.navigation.ATTRACTIONS_ROUTE
 import com.wei.traveltaoyanlite.feature.attractions.navigation.navigateToAttractions
+import com.wei.traveltaoyuanlite.MainActivity
 import com.wei.traveltaoyuanlite.core.data.utils.NetworkMonitor
 import com.wei.traveltaoyuanlite.core.designsystem.ui.DeviceOrientation
 import com.wei.traveltaoyuanlite.core.designsystem.ui.DevicePosture
@@ -210,5 +213,34 @@ class TtlAppState(
                 else -> showFunctionalityNotAvailablePopup.value = true
             }
         }
+    }
+
+    /**
+     * Restarts the application by launching the MainActivity again and terminating the current process.
+     *
+     * This method is particularly useful when applying changes that require a full Activity restart, such as
+     * locale changes. Instead of relying on the system's default Activity recreation—which can lead to UI thread
+     * blocking, recomposition issues, or even ANRs on older Android versions—this approach forces a clean app
+     * restart by:
+     *
+     * 1. Creating an Intent targeting MainActivity.
+     * 2. Clearing the current task and starting fresh.
+     * 3. Explicitly terminating the existing process to avoid lingering memory state.
+     *
+     * Note: Use this approach sparingly, and only when a full app restart is necessary.
+     *
+     * 中文說明：
+     * 當需要強制讓語言設定或其他全域變更即時生效時（例如切換語言），
+     * 可呼叫此方法重啟應用程式。
+     * 與其依賴系統的 Activity 重建（容易 ANR），不如直接殺掉逾程，重新啟動 MainActivity。
+     *
+     * @param context 任意 Context，用來觸發 MainActivity 重啟
+     */
+    fun forceRestartApp(context: Context) {
+        val intent = Intent(context.applicationContext, MainActivity::class.java).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        }
+        context.applicationContext.startActivity(intent)
+        Runtime.getRuntime().exit(0)
     }
 }

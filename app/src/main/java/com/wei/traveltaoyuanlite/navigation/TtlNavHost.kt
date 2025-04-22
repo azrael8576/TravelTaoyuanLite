@@ -4,10 +4,10 @@ import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.window.layout.DisplayFeature
 import com.wei.traveltaoyanlite.feature.attractions.navigation.attractionsGraph
-import com.wei.traveltaoyanlite.feature.attractions.navigation.navigateToAttractions
 import com.wei.traveltaoyuanlite.core.designsystem.ui.DeviceOrientation
 import com.wei.traveltaoyuanlite.feature.home.navigation.HOME_ROUTE
 import com.wei.traveltaoyuanlite.feature.home.navigation.homeGraph
@@ -35,6 +35,7 @@ fun TtlNavHost(
     val isPortrait = appState.currentDeviceOrientation == DeviceOrientation.PORTRAIT
     val contentType = appState.contentType
     val windowSizeClass = appState.windowSizeClass
+    val context = LocalContext.current
 
     NavHost(
         navController = navController,
@@ -67,6 +68,9 @@ fun TtlNavHost(
                         )
                     },
                 )
+            },
+            onLanguageSwitched = {
+                appState.forceRestartApp(context)
             },
         )
         webViewGraph(
