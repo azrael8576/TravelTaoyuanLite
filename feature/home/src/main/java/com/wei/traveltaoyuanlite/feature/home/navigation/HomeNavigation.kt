@@ -21,6 +21,7 @@ fun NavGraphBuilder.homeGraph(
     navigateToAttractions: () -> Unit,
     nestedGraphs: NavGraphBuilder.() -> Unit,
     navigateToAttractionDetail: (AttractionDetailNavArgs) -> Unit,
+    onLanguageSwitched: () -> Unit,
 ) {
     composable(route = HOME_ROUTE) {
         HomeRoute(
@@ -29,6 +30,7 @@ fun NavGraphBuilder.homeGraph(
             navigateToWebView = navigateToWebView,
             navigateToAttractions = navigateToAttractions,
             navigateToAttractionDetail = navigateToAttractionDetail,
+            onLanguageSwitched = onLanguageSwitched,
         )
     }
     nestedGraphs()

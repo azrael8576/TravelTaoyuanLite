@@ -74,8 +74,12 @@ internal fun HomeRoute(
     navigateToWebView: (String, String) -> Unit,
     navigateToAttractions: () -> Unit,
     navigateToAttractionDetail: (AttractionDetailNavArgs) -> Unit,
+    onLanguageSwitched: () -> Unit,
 ) {
     val uiStates: HomeViewState by viewModel.states.collectAsStateWithLifecycle()
+    if (uiStates.isLanguageSwitched) {
+        onLanguageSwitched()
+    }
 
     HomeScreen(
         uiStates = uiStates,

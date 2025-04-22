@@ -16,6 +16,7 @@ data class HomeViewState(
     val attractionsLoadingState: AttractionsLoadingState = AttractionsLoadingState.Idle,
     val newsUiStateList: List<NewsUiState> = emptyList(),
     val attractionsUiStateList: List<AttractionDetailNavArgs> = emptyList(),
+    val isLanguageSwitched: Boolean = false,
 ) : State {
     val loadingFinish: Boolean
         get() = newsLoadingState == NewsLoadingState.Finish(isSuccess = true) &&
