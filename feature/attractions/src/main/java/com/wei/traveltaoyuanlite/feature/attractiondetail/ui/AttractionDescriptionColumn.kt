@@ -31,7 +31,7 @@ import com.wei.traveltaoyuanlite.feature.attractions.R
 
 @Composable
 fun AttractionDescriptionColumn(
-    uiStates: AttractionDetailNavArgs,
+    args: AttractionDetailNavArgs,
     onAddressClick: () -> Unit,
     onPhoneClick: () -> Unit,
     onWebSiteClick: (String, String) -> Unit,
@@ -44,48 +44,48 @@ fun AttractionDescriptionColumn(
     ) {
         DistrictRow(
             modifier = Modifier.align(Alignment.CenterHorizontally),
-            district = uiStates.district,
+            district = args.district,
         )
 
         Text(
-            text = uiStates.description,
             modifier = Modifier.align(Alignment.CenterHorizontally),
+            text = args.description,
         )
 
         InfoItemCard(
             icon = TtlIcons.Ticket,
-            text = uiStates.ticket,
+            text = args.ticket,
         )
 
         InfoItemCard(
             icon = TtlIcons.Location,
-            text = uiStates.address,
+            text = args.address,
             onClick = onAddressClick,
         )
 
         InfoItemCard(
             icon = TtlIcons.Phone,
-            text = uiStates.phone,
+            text = args.phone,
             onClick = onPhoneClick,
         )
 
         InfoItemCard(
             icon = TtlIcons.Public,
             text = stringResource(R.string.feature_attractions_official_website),
-            onClick = { onWebSiteClick(uiStates.tyWebsite, uiStates.name) },
+            onClick = { onWebSiteClick(args.tyWebsite, args.name) },
         )
 
         LazyRow(
             horizontalArrangement = Arrangement.spacedBy(SPACING_SMALL.dp),
         ) {
-            items(uiStates.facilities.size) { index ->
-                FacilityCard(text = uiStates.facilities[index])
+            items(args.facilities.size) { index ->
+                FacilityCard(text = args.facilities[index])
             }
         }
 
         RemindCard(
             modifier = Modifier.align(Alignment.CenterHorizontally),
-            text = uiStates.remind,
+            text = args.remind,
         )
     }
 }

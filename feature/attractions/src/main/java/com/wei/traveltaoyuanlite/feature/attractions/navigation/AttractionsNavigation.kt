@@ -6,17 +6,19 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import com.wei.traveltaoyuanlite.feature.attractiondetail.navigation.navigateToAttractionDetail
 import com.wei.traveltaoyuanlite.feature.attractions.AttractionsRoute
+import kotlinx.serialization.Serializable
 
-const val ATTRACTIONS_ROUTE = "attractions_route"
+@Serializable
+data object AttractionsRoute // route to Attractions screen
 
-fun NavController.navigateToAttractions(navOptions: NavOptions? = null) {
-    this.navigate(ATTRACTIONS_ROUTE, navOptions)
+fun NavController.navigateToAttractions(navOptions: NavOptions) {
+    this.navigate(AttractionsRoute, navOptions)
 }
 
 fun NavGraphBuilder.attractionsGraph(
     navController: NavController,
 ) {
-    composable(route = ATTRACTIONS_ROUTE) {
+    composable<AttractionsRoute> {
         AttractionsRoute(
             navController = navController,
             navigateToAttractionDetail = { args ->

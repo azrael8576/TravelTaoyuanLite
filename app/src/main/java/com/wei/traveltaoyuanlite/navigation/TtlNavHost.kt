@@ -11,7 +11,7 @@ import com.wei.traveltaoyuanlite.core.designsystem.ui.DeviceOrientation
 import com.wei.traveltaoyuanlite.feature.attractiondetail.navigation.attractionDetailGraph
 import com.wei.traveltaoyuanlite.feature.attractiondetail.navigation.navigateToAttractionDetail
 import com.wei.traveltaoyuanlite.feature.attractions.navigation.attractionsGraph
-import com.wei.traveltaoyuanlite.feature.home.navigation.HOME_ROUTE
+import com.wei.traveltaoyuanlite.feature.home.navigation.HomeBaseRoute
 import com.wei.traveltaoyuanlite.feature.home.navigation.homeGraph
 import com.wei.traveltaoyuanlite.feature.news.navigation.newsScreen
 import com.wei.traveltaoyuanlite.feature.webview.navigation.navigateToWebView
@@ -30,7 +30,6 @@ fun TtlNavHost(
     modifier: Modifier = Modifier,
     appState: TtlAppState,
     displayFeatures: List<DisplayFeature>,
-    startDestination: String = HOME_ROUTE,
 ) {
     val navController = appState.navController
     val navigationType = appState.navigationType
@@ -41,7 +40,7 @@ fun TtlNavHost(
 
     NavHost(
         navController = navController,
-        startDestination = startDestination,
+        startDestination = HomeBaseRoute,
         modifier = modifier,
         enterTransition = { EnterTransition.None },
         exitTransition = { ExitTransition.None },

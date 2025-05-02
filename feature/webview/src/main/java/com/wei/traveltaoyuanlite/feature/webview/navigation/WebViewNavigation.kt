@@ -1,45 +1,32 @@
 package com.wei.traveltaoyuanlite.feature.webview.navigation
 
-import android.net.Uri
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavOptions
-import androidx.navigation.NavType
+import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
+import androidx.navigation.toRoute
 import com.wei.traveltaoyuanlite.feature.webview.WebViewRoute
+import kotlinx.serialization.Serializable
 
-const val WEB_VIEW_ROUTE = "web_view_route?url={url}&topBarTitle={topBarTitle}"
+@Serializable
+data class WebViewRoute(val url: String, val topBarTitle: String) // route to WebView screen
 
 fun NavController.navigateToWebView(
     url: String,
     topBarTitle: String,
-    navOptions: NavOptions? = null,
+    navOptions: NavOptionsBuilder.() -> Unit = {},
 ) {
-    val encodedUrl = Uri.encode(url)
-    val encodedTitle = Uri.encode(topBarTitle)
-    navigate(
-        "web_view_route?url=$encodedUrl&topBarTitle=$encodedTitle",
-        navOptions,
-    )
+    navigate(route = WebViewRoute(url, topBarTitle)) {
+        navOptions()
+    }
 }
 
 fun NavGraphBuilder.webViewGraph(
     navController: NavController,
 ) {
-    composable(
-        route = WEB_VIEW_ROUTE,
-        arguments = listOf(
-            navArgument("url") { type = NavType.StringType },
-            navArgument("topBarTitle") { type = NavType.StringType },
-        ),
-    ) { backStackEntry ->
-        val url = backStackEntry.arguments
-            ?.getString("url")
-            .orEmpty()
-        val topBarTitle = backStackEntry.arguments
-            ?.getString("topBarTitle")
-            .orEmpty()
+    composable<WebViewRoute> { entry ->
+        val url = entry.toRoute<WebViewRoute>().url
+        val topBarTitle = entry.toRoute<WebViewRoute>().topBarTitle
 
         WebViewRoute(
             navController = navController,
