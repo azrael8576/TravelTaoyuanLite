@@ -3,7 +3,9 @@ package com.wei.traveltaoyuanlite.core.data.navigation
 import android.os.Parcelable
 import com.wei.traveltaoyuanlite.core.model.data.TravelAttraction
 import kotlinx.parcelize.Parcelize
+import kotlinx.serialization.Serializable
 
+@Serializable
 @Parcelize
 data class AttractionDetailNavArgs(
     // 編號，例如：583

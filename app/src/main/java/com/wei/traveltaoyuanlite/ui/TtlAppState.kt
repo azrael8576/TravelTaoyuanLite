@@ -11,6 +11,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.NavDestination
+import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -28,13 +29,11 @@ import com.wei.traveltaoyuanlite.core.designsystem.ui.TtlNavigationType
 import com.wei.traveltaoyuanlite.core.designsystem.ui.currentDeviceOrientation
 import com.wei.traveltaoyuanlite.core.designsystem.ui.isBookPosture
 import com.wei.traveltaoyuanlite.core.designsystem.ui.isSeparating
-import com.wei.traveltaoyuanlite.feature.attractiondetail.navigation.ATTRACTION_DETAIL_ROUTE
-import com.wei.traveltaoyuanlite.feature.attractions.navigation.ATTRACTIONS_ROUTE
+import com.wei.traveltaoyuanlite.feature.attractiondetail.navigation.AttractionDetailRoute
 import com.wei.traveltaoyuanlite.feature.attractions.navigation.navigateToAttractions
-import com.wei.traveltaoyuanlite.feature.home.navigation.HOME_ROUTE
 import com.wei.traveltaoyuanlite.feature.home.navigation.navigateToHome
-import com.wei.traveltaoyuanlite.feature.news.navigation.NEWS_ROUTE
-import com.wei.traveltaoyuanlite.feature.webview.navigation.WEB_VIEW_ROUTE
+import com.wei.traveltaoyuanlite.feature.news.navigation.NewsRoute
+import com.wei.traveltaoyuanlite.feature.webview.navigation.WebViewRoute
 import com.wei.traveltaoyuanlite.navigation.TopLevelDestination
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
@@ -148,20 +147,19 @@ class TtlAppState(
         @Composable get() = navController
             .currentBackStackEntryAsState().value?.destination
 
-    val isFullScreenCurrentDestination: Boolean
-        @Composable get() = when (currentDestination?.route) {
-            null -> true
-            WEB_VIEW_ROUTE -> true
-            NEWS_ROUTE -> true
-            ATTRACTION_DETAIL_ROUTE -> true
-            else -> false
-        }
+    @Composable
+    fun isFullScreenCurrentDestination(): Boolean {
+        val destination = navController.currentBackStackEntryAsState().value?.destination
+        return destination?.hasRoute(WebViewRoute::class) == true ||
+            destination?.hasRoute(NewsRoute::class) == true ||
+            destination?.hasRoute(AttractionDetailRoute::class) == true
+    }
 
     val currentTopLevelDestination: TopLevelDestination?
-        @Composable get() = when (currentDestination?.route) {
-            HOME_ROUTE -> TopLevelDestination.HOME
-            ATTRACTIONS_ROUTE -> TopLevelDestination.ATTRACTION
-            else -> null
+        @Composable get() {
+            return TopLevelDestination.entries.firstOrNull { topLevelDestination ->
+                currentDestination?.hasRoute(route = topLevelDestination.route) == true
+            }
         }
 
     val isOffline = networkMonitor.isOnline

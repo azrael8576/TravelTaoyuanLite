@@ -30,7 +30,7 @@ import com.wei.traveltaoyuanlite.feature.attractions.R
 
 @Composable
 fun AttractionPrimaryColumn(
-    uiStates: AttractionDetailNavArgs,
+    args: AttractionDetailNavArgs,
     onBookmarkClick: () -> Unit,
 ) {
     Column(
@@ -41,11 +41,11 @@ fun AttractionPrimaryColumn(
     ) {
         Spacer(modifier = Modifier.weight(1f))
         Text(
-            text = uiStates.name,
+            text = args.name,
             style = MaterialTheme.typography.headlineLarge,
             color = Color.White,
         )
-        OpenTimeRow(uiStates)
+        OpenTimeRow(args)
         Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
             Row(modifier = Modifier.fillMaxWidth()) {
                 Spacer(modifier = Modifier.weight(1f))

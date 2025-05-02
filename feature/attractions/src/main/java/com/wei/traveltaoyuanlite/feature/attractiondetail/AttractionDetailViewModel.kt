@@ -1,17 +1,22 @@
 package com.wei.traveltaoyuanlite.feature.attractiondetail
 
 import com.wei.traveltaoyuanlite.core.base.BaseViewModel
+import com.wei.traveltaoyuanlite.core.data.navigation.AttractionDetailNavArgs
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
 import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
-@HiltViewModel
-class AttractionDetailViewModel @Inject constructor() : BaseViewModel<
+@HiltViewModel(assistedFactory = AttractionDetailViewModel.Factory::class)
+class AttractionDetailViewModel @AssistedInject constructor(
+    @Assisted private val args: AttractionDetailNavArgs,
+) : BaseViewModel<
     AttractionDetailViewAction,
     AttractionDetailViewState,
     >(AttractionDetailViewState()) {
 
-    private fun onInit(action: AttractionDetailViewAction.Init) {
-        updateState { copy(attractionDetailUiState = action.args) }
+    init {
+        updateState { copy(attractionDetailUiState = args) }
     }
 
     /**
@@ -24,9 +29,14 @@ class AttractionDetailViewModel @Inject constructor() : BaseViewModel<
      */
     override fun dispatch(action: AttractionDetailViewAction) {
         when (action) {
-            is AttractionDetailViewAction.Init -> {
-                onInit(action)
-            }
+            else -> {}
         }
+    }
+
+    @AssistedFactory
+    interface Factory {
+        fun create(
+            args: AttractionDetailNavArgs,
+        ): AttractionDetailViewModel
     }
 }

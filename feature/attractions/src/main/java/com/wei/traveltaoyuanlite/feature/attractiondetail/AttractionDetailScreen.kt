@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.windowInsetsBottomHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -62,13 +61,8 @@ import com.wei.traveltaoyuanlite.feature.attractiondetail.ui.AttractionPrimaryCo
 internal fun AttractionDetailRoute(
     navController: NavController,
     viewModel: AttractionDetailViewModel = hiltViewModel(),
-    args: AttractionDetailNavArgs,
     navigateToWebView: (String, String) -> Unit,
 ) {
-    LaunchedEffect(args) {
-        viewModel.dispatch(AttractionDetailViewAction.Init(args))
-    }
-
     val uiStates: AttractionDetailViewState by viewModel.states.collectAsStateWithLifecycle()
     AttractionDetailScreen(
         uiStates = uiStates,
@@ -85,6 +79,8 @@ internal fun AttractionDetailScreen(
     onBackClick: () -> Unit,
     navigateToWebView: (String, String) -> Unit,
 ) {
+    if (uiStates.attractionDetailUiState == null) return
+    val args = uiStates.attractionDetailUiState
     val showPopup = remember { mutableStateOf(false) }
 
     if (showPopup.value) {
@@ -98,18 +94,15 @@ internal fun AttractionDetailScreen(
     Surface {
         val horizontalBasePadding = Modifier.padding(horizontal = SPACING_LARGE.dp)
         LazyColumn(modifier = Modifier.fillMaxSize()) {
-            val uiStates = uiStates.attractionDetailUiState
-            if (uiStates != null) {
-                item {
-                    AttractionDetailContent(
-                        modifier = horizontalBasePadding,
-                        uiStates = uiStates,
-                        onBookmarkClick = { showPopup.value = true },
-                        onAddressClick = { showPopup.value = true },
-                        onPhoneClick = { showPopup.value = true },
-                        onWebSiteClick = navigateToWebView,
-                    )
-                }
+            item {
+                AttractionDetailContent(
+                    modifier = horizontalBasePadding,
+                    args = args,
+                    onBookmarkClick = { showPopup.value = true },
+                    onAddressClick = { showPopup.value = true },
+                    onPhoneClick = { showPopup.value = true },
+                    onWebSiteClick = navigateToWebView,
+                )
             }
             if (withBottomSpacer) {
                 item {
@@ -130,26 +123,26 @@ internal fun AttractionDetailScreen(
 @Composable
 private fun AttractionDetailContent(
     modifier: Modifier = Modifier,
-    uiStates: AttractionDetailNavArgs,
+    args: AttractionDetailNavArgs,
     onBookmarkClick: () -> Unit,
     onAddressClick: () -> Unit,
     onPhoneClick: () -> Unit,
     onWebSiteClick: (String, String) -> Unit,
 ) {
     Box {
-        if (uiStates.images.isNotEmpty()) {
+        if (args.images.isNotEmpty()) {
             AttractionImageWithGradient(
                 modifier = Modifier.height(520.dp),
-                imageUrlList = uiStates.images,
+                imageUrlList = args.images,
             )
         }
         Column(modifier = modifier.fillMaxSize()) {
             AttractionPrimaryColumn(
-                uiStates = uiStates,
+                args = args,
                 onBookmarkClick = onBookmarkClick,
             )
             AttractionDescriptionColumn(
-                uiStates = uiStates,
+                args = args,
                 onAddressClick = onAddressClick,
                 onPhoneClick = onPhoneClick,
                 onWebSiteClick = onWebSiteClick,

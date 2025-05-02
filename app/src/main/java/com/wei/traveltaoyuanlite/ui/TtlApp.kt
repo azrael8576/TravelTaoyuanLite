@@ -36,6 +36,7 @@ import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination
+import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.window.layout.DisplayFeature
 import com.wei.traveltaoyuanlite.R
@@ -58,6 +59,7 @@ import com.wei.traveltaoyuanlite.core.manager.SnackbarState
 import com.wei.traveltaoyuanlite.core.utils.UiText
 import com.wei.traveltaoyuanlite.navigation.TopLevelDestination
 import com.wei.traveltaoyuanlite.navigation.TtlNavHost
+import kotlin.reflect.KClass
 
 @OptIn(
     ExperimentalMaterial3Api::class,
@@ -119,7 +121,7 @@ fun TtlApp(
                 SnackbarHost(
                     hostState = snackbarHostState,
                     snackbar = { snackbarData ->
-                        if (!appState.isFullScreenCurrentDestination) {
+                        if (!appState.isFullScreenCurrentDestination()) {
                             val isError = snackbarData.visuals.message.startsWith(ERROR_TEXT_PREFIX)
                             TtlAppSnackbar(snackbarData, isError)
                         }
@@ -127,7 +129,7 @@ fun TtlApp(
                 )
             },
             bottomBar = {
-                if (!appState.isFullScreenCurrentDestination &&
+                if (!appState.isFullScreenCurrentDestination() &&
                     appState.navigationType == TtlNavigationType.BOTTOM_NAVIGATION
                 ) {
                     TtlBottomBar(
@@ -150,7 +152,7 @@ fun TtlApp(
                         ),
                     ),
             ) {
-                if (!appState.isFullScreenCurrentDestination &&
+                if (!appState.isFullScreenCurrentDestination() &&
                     appState.navigationType == TtlNavigationType.PERMANENT_NAVIGATION_DRAWER
                 ) {
                     TtlNavDrawer(
@@ -164,7 +166,7 @@ fun TtlApp(
                     )
                 }
 
-                if (!appState.isFullScreenCurrentDestination &&
+                if (!appState.isFullScreenCurrentDestination() &&
                     appState.navigationType == TtlNavigationType.NAVIGATION_RAIL
                 ) {
                     TtlNavRail(
@@ -201,7 +203,7 @@ private fun TtlNavDrawer(
 ) {
     TtlNavigationDrawer(modifier = modifier) {
         destinations.forEach { destination ->
-            val selected = currentDestination.isTopLevelDestinationInHierarchy(destination)
+            val selected = currentDestination.isRouteInHierarchy(destination.baseRoute)
             TtlNavigationDrawerItem(
                 modifier = Modifier,
                 selected = selected,
@@ -236,7 +238,7 @@ private fun TtlNavRail(
 ) {
     TtlNavigationRail(modifier = modifier) {
         destinations.forEach { destination ->
-            val selected = currentDestination.isTopLevelDestinationInHierarchy(destination)
+            val selected = currentDestination.isRouteInHierarchy(destination.baseRoute)
             TtlNavigationRailItem(
                 selected = selected,
                 onClick = { onNavigateToDestination(destination) },
@@ -269,7 +271,7 @@ private fun TtlBottomBar(
         modifier = modifier,
     ) {
         destinations.forEach { destination ->
-            val selected = currentDestination.isTopLevelDestinationInHierarchy(destination)
+            val selected = currentDestination.isRouteInHierarchy(destination.baseRoute)
             TtlNavigationBarItem(
                 modifier = Modifier,
                 selected = selected,
@@ -292,10 +294,11 @@ private fun TtlBottomBar(
     }
 }
 
-private fun NavDestination?.isTopLevelDestinationInHierarchy(destination: TopLevelDestination) =
-    this?.hierarchy?.any {
-        it.route?.contains(destination.name, true) ?: false
+private fun NavDestination?.isRouteInHierarchy(route: KClass<*>): Boolean {
+    return this?.hierarchy?.any {
+        it.hasRoute(route)
     } ?: false
+}
 
 suspend fun collectAndShowSnackbar(
     snackbarManager: SnackbarManager,

@@ -2,21 +2,27 @@ package com.wei.traveltaoyuanlite.feature.news.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavOptions
+import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.compose.composable
 import com.wei.traveltaoyuanlite.feature.news.NewsRoute
+import kotlinx.serialization.Serializable
 
-const val NEWS_ROUTE = "news_route"
+@Serializable
+data object NewsRoute // route to News screen
 
-fun NavController.navigateToNews(navOptions: NavOptions? = null) {
-    this.navigate(NEWS_ROUTE, navOptions)
+fun NavController.navigateToNews(
+    navOptions: NavOptionsBuilder.() -> Unit = {},
+) {
+    this.navigate(route = NewsRoute) {
+        navOptions()
+    }
 }
 
 fun NavGraphBuilder.newsScreen(
     navController: NavController,
     navigateToWebView: (String, String) -> Unit,
 ) {
-    composable(route = NEWS_ROUTE) {
+    composable<NewsRoute> {
         NewsRoute(
             navController = navController,
             navigateToWebView = navigateToWebView,
